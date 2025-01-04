@@ -45,6 +45,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^5.0.0
+  flutter_flavorizr: ^2.2.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -87,3 +88,27 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+flavorizr:
+  flavors:
+    dev:
+      app:
+        name: '[dev] cosmoplay'
+      android:
+        applicationId: 'com.paulyswen.cosmoplay.dev'
+        firebase:
+          config: '.firebase/dev/google-services.json'
+      ios:
+        bundleId: 'com.paulyswen.cosmoplay.dev'
+        firebase:
+          config: '.firebase/dev/GoogleService-Info.plist'
+    prod:
+      app:
+        name: 'cosmoplay'
+      android:
+        applicationId: 'com.paulyswen.cosmoplay'
+        firebase:
+          config: '.firebase/prod/google-services.json'
+      ios:
+        bundleId: 'com.paulyswen.cosmoplay'
+        firebase:
+          config: '.firebase/prod/GoogleService-Info.plist'
