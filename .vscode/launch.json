@@ -8,13 +8,23 @@
             "name": "cosmoplay (dev)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "debug"
+            "flutterMode": "debug",
+            "args": [
+                "--flavor",
+                "dev"
+            ],
+            "program": "lib/main_dev.dart"
         },
         {
             "name": "cosmoplay (prod)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "debug",
+            "args": [
+                "--flavor",
+                "prod"
+            ],
+            "program": "lib/main_prod.dart"
         }
     ]
 }
