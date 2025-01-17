@@ -1,22 +1,28 @@
+import 'package:equatable/equatable.dart';
+
 enum Flavor {
   dev,
   prod,
 }
 
-class F {
-  static Flavor? appFlavor;
+class FlavorConfig extends Equatable {
+  final Flavor flavor;
 
-  static String get name => appFlavor?.name ?? '';
+  const FlavorConfig({
+    required this.flavor,
+  });
 
-  static String get title {
-    switch (appFlavor) {
+  String get title {
+    switch (flavor) {
       case Flavor.dev:
         return '[dev] cosmoplay';
       case Flavor.prod:
         return 'cosmoplay';
-      default:
-        return 'title';
     }
   }
 
+  @override
+  List<Object?> get props => [
+        flavor,
+      ];
 }

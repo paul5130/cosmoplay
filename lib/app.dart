@@ -1,43 +1,30 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:cosmoplay/initial_binding.dart';
+import 'package:cosmoplay/pages/video_player_scene.dart/video_player_scene.dart';
 
-import 'flavors.dart';
-import 'pages/my_home_page.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart' hide Trans;
 
 class App extends StatelessWidget {
-  const App({super.key});
-
+  const App({
+    required this.initialBinding,
+    super.key,
+  });
+  final InitialBinding initialBinding;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: F.title,
+    return GetMaterialApp(
+      title: initialBinding.flavorConfig.title,
+      initialBinding: initialBinding,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _flavorBanner(
-        child: MyHomePage(),
-        show: kDebugMode,
-      ),
+      initialRoute: VideoPlayerScene.ROUTE_NAME,
+      getPages: [
+        GetPage(
+          name: VideoPlayerScene.ROUTE_NAME,
+          page: () => const VideoPlayerScene(),
+        ),
+      ],
     );
   }
-
-  Widget _flavorBanner({
-    required Widget child,
-    bool show = true,
-  }) =>
-      show
-          ? Banner(
-              location: BannerLocation.topStart,
-              message: F.name,
-              color: Colors.green,
-              textStyle: TextStyle(
-                  fontWeight: FontWeight.w700,
-                  fontSize: 12.0,
-                  letterSpacing: 1.0),
-              textDirection: TextDirection.ltr,
-              child: child,
-            )
-          : Container(
-              child: child,
-            );
 }

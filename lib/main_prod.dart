@@ -1,8 +1,9 @@
-import 'flavors.dart';
+import 'package:cosmoplay/app.dart';
+import 'package:cosmoplay/bootstrap.dart';
+import 'package:cosmoplay/flavors.dart';
 
-import 'main.dart' as runner;
-
-Future<void> main() async {
-  F.appFlavor = Flavor.prod;
-  await runner.main();
-}
+void main() => bootstrap(
+      flavor: Flavor.prod,
+      builder: ({required initialBinding}) =>
+          App(initialBinding: initialBinding),
+    );
