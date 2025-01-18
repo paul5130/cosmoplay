@@ -155,7 +155,7 @@ class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.idle'));
+    properties.add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.idle'));
   }
 
   @override

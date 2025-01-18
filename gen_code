@@ -1,0 +1,8 @@
+flutter pub run build_runner build --delete-conflicting-outputs
+dart pub run easy_localization:generate -S assets/translations -f keys -O lib/flutter_gen_assets -o locale_keys.g.dart
+flutter pub run flutter_flavorizr
+flutter pub run pubspec_dependency_sorter
+dart run flutter_native_splash:create
+flutter build ios --target=lib/main_dev.dart --flavor=dev
+flutter build ipa --release --flavor dev -t lib/main_dev.dart --no-codesign
+xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive -exportPath build/ios -exportOptionsPlist .signing_config/dev/export_options.plist

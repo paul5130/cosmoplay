@@ -1,5 +1,5 @@
 import 'package:cosmoplay/initial_binding.dart';
-import 'package:cosmoplay/pages/video_player_scene.dart/video_player_scene.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/video_player_scene.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
