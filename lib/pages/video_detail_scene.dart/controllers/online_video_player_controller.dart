@@ -13,19 +13,20 @@ class OnlineVideoPlayerController extends GetxController {
   //     _rxVideoPlayerState.value = newState;
 
   Future<void> initializeVideo(
-    Uri url,
+    String videoUrl,
     String thumbnailUrl,
   ) async {
     _rxPlayerState.value = OnlineVideoPlayerState.initial(
-      url: url,
+      videoUrl: videoUrl,
       thumbnailUrl: thumbnailUrl,
     );
     try {
+      final url = Uri.parse(videoUrl);
       videoPlayerController = VideoPlayerController.networkUrl(url);
       await videoPlayerController.initialize();
 
       _rxPlayerState.value = OnlineVideoPlayerState.initialized(
-        url: url,
+        videoUrl: url,
         thumbnailUrl: thumbnailUrl,
         length: videoPlayerController.value.duration,
       );
@@ -34,12 +35,12 @@ class OnlineVideoPlayerController extends GetxController {
         () {
           if (videoPlayerController.value.isBuffering) {
             _rxPlayerState.value = OnlineVideoPlayerState.buffering(
-              url: url,
+              videoUrl: url,
               currentPosition: videoPlayerController.value.position,
             );
           } else if (videoPlayerController.value.isPlaying) {
             _rxPlayerState.value = OnlineVideoPlayerState.playing(
-              url: url,
+              videoUrl: url,
               currentPosition: videoPlayerController.value.position,
             );
           }
@@ -47,7 +48,7 @@ class OnlineVideoPlayerController extends GetxController {
       );
     } catch (e) {
       _rxPlayerState.value = OnlineVideoPlayerState.error(
-        url: url,
+        videoUrl: videoUrl,
         thumbnailUrl: thumbnailUrl,
         error: e.toString(),
       );

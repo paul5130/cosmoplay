@@ -1,5 +1,6 @@
 import 'package:cosmoplay/initial_binding.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/video_player_scene.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/video_detail_scene.dart';
+import 'package:cosmoplay/pages/video_list_scene.dart/video_list_scene.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' hide Trans;
@@ -18,11 +19,15 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: VideoPlayerScene.ROUTE_NAME,
+      initialRoute: VideoListScene.ROUTE_NAME,
       getPages: [
         GetPage(
-          name: VideoPlayerScene.ROUTE_NAME,
-          page: () => const VideoPlayerScene(),
+          name: VideoListScene.ROUTE_NAME,
+          page: () => const VideoListScene(),
+        ),
+        GetPage(
+          name: VideoDetailScene.ROUTE_NAME,
+          page: () => const VideoDetailScene(),
         ),
       ],
     );

@@ -1,6 +1,6 @@
-part of 'video_player_scene.dart';
+part of 'video_detail_scene.dart';
 
-class VideoPlayerSceneBinding extends Bindings {
+class VideoDetailSceneBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(OnlineVideoPlayerController());

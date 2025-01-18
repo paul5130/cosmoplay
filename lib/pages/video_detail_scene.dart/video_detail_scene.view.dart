@@ -1,8 +1,8 @@
-part of 'video_player_scene.dart';
+part of 'video_detail_scene.dart';
 
-class _VideoPlayerSceneStateWidgetBuilder
-    extends BaseSceneWidgetBuilder<_VideoPlayerSceneState> {
-  _VideoPlayerSceneStateWidgetBuilder(super.state);
+class _VideoDetailSceneStateWidgetBuilder
+    extends BaseSceneWidgetBuilder<_VideoDetailSceneState> {
+  _VideoDetailSceneStateWidgetBuilder(super.state);
 
   @override
   Widget sceneWidget(BuildContext context) => Obx(
@@ -18,7 +18,7 @@ class _VideoPlayerSceneStateWidgetBuilder
                       Align(
                         alignment: Alignment.center,
                         child: Image.network(
-                          state.thumbnailUrl,
+                          state._heheVideo.imageUrl,
                           fit: BoxFit.contain,
                         ),
                       ),

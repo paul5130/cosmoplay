@@ -14,6 +14,9 @@ class HeHeVideo extends Equatable {
 
   final String name;
   final String id;
+  String get imageUrl => 'https://lh3.googleusercontent.com/d/$id';
+  String get videoUrl => 'https://drive.usercontent.google.com/download?id=$id';
+
   factory HeHeVideo.fromJson(Map<String, dynamic> srcJson) =>
       _$HeHeVideoFromJson(srcJson);
   Map<String, dynamic> toJson() => _$HeHeVideoToJson(this);
