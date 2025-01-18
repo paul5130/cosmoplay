@@ -13,25 +13,13 @@ class VideoDetailScene extends StatefulWidget {
   const VideoDetailScene({
     super.key,
   });
-  static const String _ROUTE_NAME = "VideoPlayerScene";
 
-  static String get ROUTE_NAME => "/$_ROUTE_NAME";
-
-  static String get ARG_HEHE_VIDEO => "ARG_HEHE_VIDEO";
-
-  static Map<String, dynamic> genArgs({
-    required HeHeVideo heheVideo,
-  }) =>
-      {
-        ARG_HEHE_VIDEO: heheVideo,
-      };
   @override
   State<VideoDetailScene> createState() => _VideoDetailSceneState();
 }
 
 class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene> {
-  final _heheVideo =
-      Get.arguments?[VideoDetailScene.ARG_HEHE_VIDEO] as HeHeVideo;
+  final _heheVideo = Get.arguments as HeHeVideo;
   final _onlineVideoPlayController = Get.find<OnlineVideoPlayerController>();
   bool get _isLoading => switch (_onlineVideoPlayController.playerState) {
         final OnlineVideoPlayerStateInitial _ => true,

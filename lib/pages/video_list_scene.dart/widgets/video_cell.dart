@@ -12,9 +12,7 @@ class VideoCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onPressed(
-        heheVideo,
-      ),
+      onTap: () => onPressed(heheVideo),
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         color: Colors.white,

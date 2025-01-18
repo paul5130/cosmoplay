@@ -1,8 +1,8 @@
 import 'dart:async';
 
+import 'package:cosmoplay/app.dart';
 import 'package:flutter/material.dart';
 
-import 'app.dart';
 import 'flavors.dart';
 import 'initial_binding.dart';
 
