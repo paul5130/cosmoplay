@@ -24,7 +24,7 @@ class _VideoListSceneStateWidgetBuilder
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onChanged: null,
+                  onChanged: state._getVideoListController.filterVideos,
                 ),
               ),
               state._getVideoListController.state.when(

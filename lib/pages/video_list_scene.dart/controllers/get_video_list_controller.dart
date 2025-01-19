@@ -10,6 +10,7 @@ class GetVideoListController extends GetxService {
     const GetVideoListState.initial(),
   );
   GetVideoListState get state => _rxState.value;
+  late List<HeHeVideo> allVideos;
 
   Future<void> loadVideos() async {
     _rxState.value = const GetVideoListState.loading();
@@ -24,6 +25,7 @@ class GetVideoListController extends GetxService {
             ),
           )
           .toList();
+      allVideos = videos;
       _rxState.value = GetVideoListState.success(
         videos: videos,
       );
@@ -36,16 +38,21 @@ class GetVideoListController extends GetxService {
 
   void filterVideos(String query) {
     if (state is! GetVideoListStateSuccess) return;
-    final videos = (state as GetVideoListStateSuccess).videos;
-    final filteredVideos = query.isEmpty
-        ? videos
-        : videos
-            .where(
-              (video) => video.name.contains(query),
-            )
-            .toList();
-    _rxState.value = GetVideoListState.success(
-      videos: filteredVideos,
-    );
+    if (query.trim().isEmpty) {
+      _rxState.value = GetVideoListState.success(
+        videos: allVideos,
+      );
+    } else {
+      final filteredVideos = allVideos
+          .where(
+            (video) => video.name.toLowerCase().contains(
+                  query.toLowerCase(),
+                ),
+          )
+          .toList();
+      _rxState.value = GetVideoListState.success(
+        videos: filteredVideos,
+      );
+    }
   }
 }
