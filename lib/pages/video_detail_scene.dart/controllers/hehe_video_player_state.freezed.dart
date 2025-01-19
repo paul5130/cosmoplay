@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'online_video_player_state.dart';
+part of 'hehe_video_player_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$OnlineVideoPlayerState {
+mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
@@ -63,110 +63,110 @@ mixin _$OnlineVideoPlayerState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OnlineVideoPlayerStateCopyWith<$Res> {
-  factory $OnlineVideoPlayerStateCopyWith(OnlineVideoPlayerState value,
-          $Res Function(OnlineVideoPlayerState) then) =
-      _$OnlineVideoPlayerStateCopyWithImpl<$Res, OnlineVideoPlayerState>;
+abstract class $HeHeVideoPlayerStateCopyWith<$Res> {
+  factory $HeHeVideoPlayerStateCopyWith(HeHeVideoPlayerState value,
+          $Res Function(HeHeVideoPlayerState) then) =
+      _$HeHeVideoPlayerStateCopyWithImpl<$Res, HeHeVideoPlayerState>;
 }
 
 /// @nodoc
-class _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        $Val extends OnlineVideoPlayerState>
-    implements $OnlineVideoPlayerStateCopyWith<$Res> {
-  _$OnlineVideoPlayerStateCopyWithImpl(this._value, this._then);
+class _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        $Val extends HeHeVideoPlayerState>
+    implements $HeHeVideoPlayerStateCopyWith<$Res> {
+  _$HeHeVideoPlayerStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateIdleImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateIdleImplCopyWith(
-          _$OnlineVideoPlayerStateIdleImpl value,
-          $Res Function(_$OnlineVideoPlayerStateIdleImpl) then) =
-      __$$OnlineVideoPlayerStateIdleImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateIdleImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateIdleImplCopyWith(
+          _$HeHeVideoPlayerStateIdleImpl value,
+          $Res Function(_$HeHeVideoPlayerStateIdleImpl) then) =
+      __$$HeHeVideoPlayerStateIdleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateIdleImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateIdleImpl>
-    implements _$$OnlineVideoPlayerStateIdleImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateIdleImplCopyWithImpl(
-      _$OnlineVideoPlayerStateIdleImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateIdleImpl) _then)
+class __$$HeHeVideoPlayerStateIdleImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateIdleImpl>
+    implements _$$HeHeVideoPlayerStateIdleImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateIdleImplCopyWithImpl(
+      _$HeHeVideoPlayerStateIdleImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateIdleImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
+class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
     with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateIdleImpl() : super._();
+  const _$HeHeVideoPlayerStateIdleImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.idle()';
+    return 'HeHeVideoPlayerState.idle()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.idle'));
+    properties.add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.idle'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateIdleImpl);
+            other is _$HeHeVideoPlayerStateIdleImpl);
   }
 
   @override
@@ -232,15 +232,15 @@ class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return idle(this);
   }
@@ -248,14 +248,14 @@ class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return idle?.call(this);
   }
@@ -263,14 +263,14 @@ class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -280,32 +280,32 @@ class _$OnlineVideoPlayerStateIdleImpl extends OnlineVideoPlayerStateIdle
   }
 }
 
-abstract class OnlineVideoPlayerStateIdle extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateIdle() = _$OnlineVideoPlayerStateIdleImpl;
-  const OnlineVideoPlayerStateIdle._() : super._();
+abstract class HeHeVideoPlayerStateIdle extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateIdle() = _$HeHeVideoPlayerStateIdleImpl;
+  const HeHeVideoPlayerStateIdle._() : super._();
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateInitialImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateInitialImplCopyWith(
-          _$OnlineVideoPlayerStateInitialImpl value,
-          $Res Function(_$OnlineVideoPlayerStateInitialImpl) then) =
-      __$$OnlineVideoPlayerStateInitialImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateInitialImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateInitialImplCopyWith(
+          _$HeHeVideoPlayerStateInitialImpl value,
+          $Res Function(_$HeHeVideoPlayerStateInitialImpl) then) =
+      __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String videoUrl, String thumbnailUrl});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateInitialImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateInitialImpl>
-    implements _$$OnlineVideoPlayerStateInitialImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateInitialImplCopyWithImpl(
-      _$OnlineVideoPlayerStateInitialImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateInitialImpl) _then)
+class __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateInitialImpl>
+    implements _$$HeHeVideoPlayerStateInitialImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateInitialImplCopyWithImpl(
+      _$HeHeVideoPlayerStateInitialImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateInitialImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -313,7 +313,7 @@ class __$$OnlineVideoPlayerStateInitialImplCopyWithImpl<$Res>
     Object? videoUrl = null,
     Object? thumbnailUrl = null,
   }) {
-    return _then(_$OnlineVideoPlayerStateInitialImpl(
+    return _then(_$HeHeVideoPlayerStateInitialImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -328,9 +328,9 @@ class __$$OnlineVideoPlayerStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
+class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateInitialImpl(
+  const _$HeHeVideoPlayerStateInitialImpl(
       {required this.videoUrl, required this.thumbnailUrl})
       : super._();
 
@@ -341,14 +341,14 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.initial(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl)';
+    return 'HeHeVideoPlayerState.initial(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.initial'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.initial'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl));
   }
@@ -357,7 +357,7 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateInitialImpl &&
+            other is _$HeHeVideoPlayerStateInitialImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
@@ -367,15 +367,14 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStateInitialImplCopyWith<
-          _$OnlineVideoPlayerStateInitialImpl>
-      get copyWith => __$$OnlineVideoPlayerStateInitialImplCopyWithImpl<
-          _$OnlineVideoPlayerStateInitialImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateInitialImplCopyWith<_$HeHeVideoPlayerStateInitialImpl>
+      get copyWith => __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<
+          _$HeHeVideoPlayerStateInitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -437,15 +436,15 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return initial(this);
   }
@@ -453,14 +452,14 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -468,14 +467,14 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -485,45 +484,43 @@ class _$OnlineVideoPlayerStateInitialImpl extends OnlineVideoPlayerStateInitial
   }
 }
 
-abstract class OnlineVideoPlayerStateInitial extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateInitial(
-          {required final String videoUrl,
-          required final String thumbnailUrl}) =
-      _$OnlineVideoPlayerStateInitialImpl;
-  const OnlineVideoPlayerStateInitial._() : super._();
+abstract class HeHeVideoPlayerStateInitial extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateInitial(
+      {required final String videoUrl,
+      required final String thumbnailUrl}) = _$HeHeVideoPlayerStateInitialImpl;
+  const HeHeVideoPlayerStateInitial._() : super._();
 
   String get videoUrl;
   String get thumbnailUrl;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStateInitialImplCopyWith<
-          _$OnlineVideoPlayerStateInitialImpl>
+  _$$HeHeVideoPlayerStateInitialImplCopyWith<_$HeHeVideoPlayerStateInitialImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateInitializedImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateInitializedImplCopyWith(
-          _$OnlineVideoPlayerStateInitializedImpl value,
-          $Res Function(_$OnlineVideoPlayerStateInitializedImpl) then) =
-      __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateInitializedImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateInitializedImplCopyWith(
+          _$HeHeVideoPlayerStateInitializedImpl value,
+          $Res Function(_$HeHeVideoPlayerStateInitializedImpl) then) =
+      __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri videoUrl, String thumbnailUrl, Duration length});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateInitializedImpl>
-    implements _$$OnlineVideoPlayerStateInitializedImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl(
-      _$OnlineVideoPlayerStateInitializedImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateInitializedImpl) _then)
+class __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateInitializedImpl>
+    implements _$$HeHeVideoPlayerStateInitializedImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl(
+      _$HeHeVideoPlayerStateInitializedImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateInitializedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -532,7 +529,7 @@ class __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl<$Res>
     Object? thumbnailUrl = null,
     Object? length = null,
   }) {
-    return _then(_$OnlineVideoPlayerStateInitializedImpl(
+    return _then(_$HeHeVideoPlayerStateInitializedImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -551,9 +548,9 @@ class __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateInitializedImpl
-    extends OnlineVideoPlayerStateInitialized with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateInitializedImpl(
+class _$HeHeVideoPlayerStateInitializedImpl
+    extends HeHeVideoPlayerStateInitialized with DiagnosticableTreeMixin {
+  const _$HeHeVideoPlayerStateInitializedImpl(
       {required this.videoUrl,
       required this.thumbnailUrl,
       required this.length})
@@ -568,14 +565,14 @@ class _$OnlineVideoPlayerStateInitializedImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.initialized(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, length: $length)';
+    return 'HeHeVideoPlayerState.initialized(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, length: $length)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.initialized'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.initialized'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
       ..add(DiagnosticsProperty('length', length));
@@ -585,7 +582,7 @@ class _$OnlineVideoPlayerStateInitializedImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateInitializedImpl &&
+            other is _$HeHeVideoPlayerStateInitializedImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
@@ -596,15 +593,15 @@ class _$OnlineVideoPlayerStateInitializedImpl
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl, length);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStateInitializedImplCopyWith<
-          _$OnlineVideoPlayerStateInitializedImpl>
-      get copyWith => __$$OnlineVideoPlayerStateInitializedImplCopyWithImpl<
-          _$OnlineVideoPlayerStateInitializedImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateInitializedImplCopyWith<
+          _$HeHeVideoPlayerStateInitializedImpl>
+      get copyWith => __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<
+          _$HeHeVideoPlayerStateInitializedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -666,15 +663,15 @@ class _$OnlineVideoPlayerStateInitializedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return initialized(this);
   }
@@ -682,14 +679,14 @@ class _$OnlineVideoPlayerStateInitializedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return initialized?.call(this);
   }
@@ -697,14 +694,14 @@ class _$OnlineVideoPlayerStateInitializedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -714,48 +711,46 @@ class _$OnlineVideoPlayerStateInitializedImpl
   }
 }
 
-abstract class OnlineVideoPlayerStateInitialized
-    extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateInitialized(
-          {required final Uri videoUrl,
-          required final String thumbnailUrl,
-          required final Duration length}) =
-      _$OnlineVideoPlayerStateInitializedImpl;
-  const OnlineVideoPlayerStateInitialized._() : super._();
+abstract class HeHeVideoPlayerStateInitialized extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateInitialized(
+      {required final Uri videoUrl,
+      required final String thumbnailUrl,
+      required final Duration length}) = _$HeHeVideoPlayerStateInitializedImpl;
+  const HeHeVideoPlayerStateInitialized._() : super._();
 
   Uri get videoUrl;
   String get thumbnailUrl;
   Duration get length;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStateInitializedImplCopyWith<
-          _$OnlineVideoPlayerStateInitializedImpl>
+  _$$HeHeVideoPlayerStateInitializedImplCopyWith<
+          _$HeHeVideoPlayerStateInitializedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStatePlayingImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStatePlayingImplCopyWith(
-          _$OnlineVideoPlayerStatePlayingImpl value,
-          $Res Function(_$OnlineVideoPlayerStatePlayingImpl) then) =
-      __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStatePlayingImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStatePlayingImplCopyWith(
+          _$HeHeVideoPlayerStatePlayingImpl value,
+          $Res Function(_$HeHeVideoPlayerStatePlayingImpl) then) =
+      __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri videoUrl, Duration currentPosition});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStatePlayingImpl>
-    implements _$$OnlineVideoPlayerStatePlayingImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl(
-      _$OnlineVideoPlayerStatePlayingImpl _value,
-      $Res Function(_$OnlineVideoPlayerStatePlayingImpl) _then)
+class __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStatePlayingImpl>
+    implements _$$HeHeVideoPlayerStatePlayingImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl(
+      _$HeHeVideoPlayerStatePlayingImpl _value,
+      $Res Function(_$HeHeVideoPlayerStatePlayingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -763,7 +758,7 @@ class __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl<$Res>
     Object? videoUrl = null,
     Object? currentPosition = null,
   }) {
-    return _then(_$OnlineVideoPlayerStatePlayingImpl(
+    return _then(_$HeHeVideoPlayerStatePlayingImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -778,9 +773,9 @@ class __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
+class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
     with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStatePlayingImpl(
+  const _$HeHeVideoPlayerStatePlayingImpl(
       {required this.videoUrl, required this.currentPosition})
       : super._();
 
@@ -791,14 +786,14 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.playing(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.playing(videoUrl: $videoUrl, currentPosition: $currentPosition)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.playing'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.playing'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('currentPosition', currentPosition));
   }
@@ -807,7 +802,7 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStatePlayingImpl &&
+            other is _$HeHeVideoPlayerStatePlayingImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.currentPosition, currentPosition) ||
@@ -817,15 +812,14 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStatePlayingImplCopyWith<
-          _$OnlineVideoPlayerStatePlayingImpl>
-      get copyWith => __$$OnlineVideoPlayerStatePlayingImplCopyWithImpl<
-          _$OnlineVideoPlayerStatePlayingImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStatePlayingImplCopyWith<_$HeHeVideoPlayerStatePlayingImpl>
+      get copyWith => __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<
+          _$HeHeVideoPlayerStatePlayingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -887,15 +881,15 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return playing(this);
   }
@@ -903,14 +897,14 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return playing?.call(this);
   }
@@ -918,14 +912,14 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (playing != null) {
@@ -935,45 +929,44 @@ class _$OnlineVideoPlayerStatePlayingImpl extends OnlineVideoPlayerStatePlaying
   }
 }
 
-abstract class OnlineVideoPlayerStatePlaying extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStatePlaying(
+abstract class HeHeVideoPlayerStatePlaying extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStatePlaying(
           {required final Uri videoUrl,
           required final Duration currentPosition}) =
-      _$OnlineVideoPlayerStatePlayingImpl;
-  const OnlineVideoPlayerStatePlaying._() : super._();
+      _$HeHeVideoPlayerStatePlayingImpl;
+  const HeHeVideoPlayerStatePlaying._() : super._();
 
   Uri get videoUrl;
   Duration get currentPosition;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStatePlayingImplCopyWith<
-          _$OnlineVideoPlayerStatePlayingImpl>
+  _$$HeHeVideoPlayerStatePlayingImplCopyWith<_$HeHeVideoPlayerStatePlayingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStatePausedImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStatePausedImplCopyWith(
-          _$OnlineVideoPlayerStatePausedImpl value,
-          $Res Function(_$OnlineVideoPlayerStatePausedImpl) then) =
-      __$$OnlineVideoPlayerStatePausedImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStatePausedImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStatePausedImplCopyWith(
+          _$HeHeVideoPlayerStatePausedImpl value,
+          $Res Function(_$HeHeVideoPlayerStatePausedImpl) then) =
+      __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri videoUrl, Duration currentPosition});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStatePausedImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStatePausedImpl>
-    implements _$$OnlineVideoPlayerStatePausedImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStatePausedImplCopyWithImpl(
-      _$OnlineVideoPlayerStatePausedImpl _value,
-      $Res Function(_$OnlineVideoPlayerStatePausedImpl) _then)
+class __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStatePausedImpl>
+    implements _$$HeHeVideoPlayerStatePausedImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStatePausedImplCopyWithImpl(
+      _$HeHeVideoPlayerStatePausedImpl _value,
+      $Res Function(_$HeHeVideoPlayerStatePausedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -981,7 +974,7 @@ class __$$OnlineVideoPlayerStatePausedImplCopyWithImpl<$Res>
     Object? videoUrl = null,
     Object? currentPosition = null,
   }) {
-    return _then(_$OnlineVideoPlayerStatePausedImpl(
+    return _then(_$HeHeVideoPlayerStatePausedImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -996,9 +989,9 @@ class __$$OnlineVideoPlayerStatePausedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
+class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
     with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStatePausedImpl(
+  const _$HeHeVideoPlayerStatePausedImpl(
       {required this.videoUrl, required this.currentPosition})
       : super._();
 
@@ -1009,14 +1002,14 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.paused(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.paused(videoUrl: $videoUrl, currentPosition: $currentPosition)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.paused'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.paused'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('currentPosition', currentPosition));
   }
@@ -1025,7 +1018,7 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStatePausedImpl &&
+            other is _$HeHeVideoPlayerStatePausedImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.currentPosition, currentPosition) ||
@@ -1035,15 +1028,14 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStatePausedImplCopyWith<
-          _$OnlineVideoPlayerStatePausedImpl>
-      get copyWith => __$$OnlineVideoPlayerStatePausedImplCopyWithImpl<
-          _$OnlineVideoPlayerStatePausedImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStatePausedImplCopyWith<_$HeHeVideoPlayerStatePausedImpl>
+      get copyWith => __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<
+          _$HeHeVideoPlayerStatePausedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1105,15 +1097,15 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return paused(this);
   }
@@ -1121,14 +1113,14 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return paused?.call(this);
   }
@@ -1136,14 +1128,14 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (paused != null) {
@@ -1153,45 +1145,44 @@ class _$OnlineVideoPlayerStatePausedImpl extends OnlineVideoPlayerStatePaused
   }
 }
 
-abstract class OnlineVideoPlayerStatePaused extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStatePaused(
+abstract class HeHeVideoPlayerStatePaused extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStatePaused(
           {required final Uri videoUrl,
           required final Duration currentPosition}) =
-      _$OnlineVideoPlayerStatePausedImpl;
-  const OnlineVideoPlayerStatePaused._() : super._();
+      _$HeHeVideoPlayerStatePausedImpl;
+  const HeHeVideoPlayerStatePaused._() : super._();
 
   Uri get videoUrl;
   Duration get currentPosition;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStatePausedImplCopyWith<
-          _$OnlineVideoPlayerStatePausedImpl>
+  _$$HeHeVideoPlayerStatePausedImplCopyWith<_$HeHeVideoPlayerStatePausedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateBufferingImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateBufferingImplCopyWith(
-          _$OnlineVideoPlayerStateBufferingImpl value,
-          $Res Function(_$OnlineVideoPlayerStateBufferingImpl) then) =
-      __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateBufferingImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateBufferingImplCopyWith(
+          _$HeHeVideoPlayerStateBufferingImpl value,
+          $Res Function(_$HeHeVideoPlayerStateBufferingImpl) then) =
+      __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri videoUrl, Duration currentPosition});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateBufferingImpl>
-    implements _$$OnlineVideoPlayerStateBufferingImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl(
-      _$OnlineVideoPlayerStateBufferingImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateBufferingImpl) _then)
+class __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateBufferingImpl>
+    implements _$$HeHeVideoPlayerStateBufferingImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl(
+      _$HeHeVideoPlayerStateBufferingImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateBufferingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1199,7 +1190,7 @@ class __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl<$Res>
     Object? videoUrl = null,
     Object? currentPosition = null,
   }) {
-    return _then(_$OnlineVideoPlayerStateBufferingImpl(
+    return _then(_$HeHeVideoPlayerStateBufferingImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -1214,9 +1205,9 @@ class __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateBufferingImpl
-    extends OnlineVideoPlayerStateBuffering with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateBufferingImpl(
+class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
+    with DiagnosticableTreeMixin {
+  const _$HeHeVideoPlayerStateBufferingImpl(
       {required this.videoUrl, required this.currentPosition})
       : super._();
 
@@ -1227,14 +1218,14 @@ class _$OnlineVideoPlayerStateBufferingImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.buffering(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.buffering(videoUrl: $videoUrl, currentPosition: $currentPosition)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.buffering'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.buffering'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('currentPosition', currentPosition));
   }
@@ -1243,7 +1234,7 @@ class _$OnlineVideoPlayerStateBufferingImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateBufferingImpl &&
+            other is _$HeHeVideoPlayerStateBufferingImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.currentPosition, currentPosition) ||
@@ -1253,15 +1244,15 @@ class _$OnlineVideoPlayerStateBufferingImpl
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStateBufferingImplCopyWith<
-          _$OnlineVideoPlayerStateBufferingImpl>
-      get copyWith => __$$OnlineVideoPlayerStateBufferingImplCopyWithImpl<
-          _$OnlineVideoPlayerStateBufferingImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateBufferingImplCopyWith<
+          _$HeHeVideoPlayerStateBufferingImpl>
+      get copyWith => __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<
+          _$HeHeVideoPlayerStateBufferingImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1323,15 +1314,15 @@ class _$OnlineVideoPlayerStateBufferingImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return buffering(this);
   }
@@ -1339,14 +1330,14 @@ class _$OnlineVideoPlayerStateBufferingImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return buffering?.call(this);
   }
@@ -1354,14 +1345,14 @@ class _$OnlineVideoPlayerStateBufferingImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (buffering != null) {
@@ -1371,52 +1362,52 @@ class _$OnlineVideoPlayerStateBufferingImpl
   }
 }
 
-abstract class OnlineVideoPlayerStateBuffering extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateBuffering(
+abstract class HeHeVideoPlayerStateBuffering extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateBuffering(
           {required final Uri videoUrl,
           required final Duration currentPosition}) =
-      _$OnlineVideoPlayerStateBufferingImpl;
-  const OnlineVideoPlayerStateBuffering._() : super._();
+      _$HeHeVideoPlayerStateBufferingImpl;
+  const HeHeVideoPlayerStateBuffering._() : super._();
 
   Uri get videoUrl;
   Duration get currentPosition;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStateBufferingImplCopyWith<
-          _$OnlineVideoPlayerStateBufferingImpl>
+  _$$HeHeVideoPlayerStateBufferingImplCopyWith<
+          _$HeHeVideoPlayerStateBufferingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateCompletedImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateCompletedImplCopyWith(
-          _$OnlineVideoPlayerStateCompletedImpl value,
-          $Res Function(_$OnlineVideoPlayerStateCompletedImpl) then) =
-      __$$OnlineVideoPlayerStateCompletedImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateCompletedImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateCompletedImplCopyWith(
+          _$HeHeVideoPlayerStateCompletedImpl value,
+          $Res Function(_$HeHeVideoPlayerStateCompletedImpl) then) =
+      __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Uri videoUrl});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateCompletedImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateCompletedImpl>
-    implements _$$OnlineVideoPlayerStateCompletedImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateCompletedImplCopyWithImpl(
-      _$OnlineVideoPlayerStateCompletedImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateCompletedImpl) _then)
+class __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateCompletedImpl>
+    implements _$$HeHeVideoPlayerStateCompletedImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl(
+      _$HeHeVideoPlayerStateCompletedImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateCompletedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? videoUrl = null,
   }) {
-    return _then(_$OnlineVideoPlayerStateCompletedImpl(
+    return _then(_$HeHeVideoPlayerStateCompletedImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -1427,9 +1418,9 @@ class __$$OnlineVideoPlayerStateCompletedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateCompletedImpl
-    extends OnlineVideoPlayerStateCompleted with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateCompletedImpl({required this.videoUrl})
+class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
+    with DiagnosticableTreeMixin {
+  const _$HeHeVideoPlayerStateCompletedImpl({required this.videoUrl})
       : super._();
 
   @override
@@ -1437,14 +1428,14 @@ class _$OnlineVideoPlayerStateCompletedImpl
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.completed(videoUrl: $videoUrl)';
+    return 'HeHeVideoPlayerState.completed(videoUrl: $videoUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.completed'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.completed'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl));
   }
 
@@ -1452,7 +1443,7 @@ class _$OnlineVideoPlayerStateCompletedImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateCompletedImpl &&
+            other is _$HeHeVideoPlayerStateCompletedImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl));
   }
@@ -1460,15 +1451,15 @@ class _$OnlineVideoPlayerStateCompletedImpl
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStateCompletedImplCopyWith<
-          _$OnlineVideoPlayerStateCompletedImpl>
-      get copyWith => __$$OnlineVideoPlayerStateCompletedImplCopyWithImpl<
-          _$OnlineVideoPlayerStateCompletedImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateCompletedImplCopyWith<
+          _$HeHeVideoPlayerStateCompletedImpl>
+      get copyWith => __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<
+          _$HeHeVideoPlayerStateCompletedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1530,15 +1521,15 @@ class _$OnlineVideoPlayerStateCompletedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return completed(this);
   }
@@ -1546,14 +1537,14 @@ class _$OnlineVideoPlayerStateCompletedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return completed?.call(this);
   }
@@ -1561,14 +1552,14 @@ class _$OnlineVideoPlayerStateCompletedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (completed != null) {
@@ -1578,42 +1569,42 @@ class _$OnlineVideoPlayerStateCompletedImpl
   }
 }
 
-abstract class OnlineVideoPlayerStateCompleted extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateCompleted({required final Uri videoUrl}) =
-      _$OnlineVideoPlayerStateCompletedImpl;
-  const OnlineVideoPlayerStateCompleted._() : super._();
+abstract class HeHeVideoPlayerStateCompleted extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateCompleted({required final Uri videoUrl}) =
+      _$HeHeVideoPlayerStateCompletedImpl;
+  const HeHeVideoPlayerStateCompleted._() : super._();
 
   Uri get videoUrl;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStateCompletedImplCopyWith<
-          _$OnlineVideoPlayerStateCompletedImpl>
+  _$$HeHeVideoPlayerStateCompletedImplCopyWith<
+          _$HeHeVideoPlayerStateCompletedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OnlineVideoPlayerStateErrorImplCopyWith<$Res> {
-  factory _$$OnlineVideoPlayerStateErrorImplCopyWith(
-          _$OnlineVideoPlayerStateErrorImpl value,
-          $Res Function(_$OnlineVideoPlayerStateErrorImpl) then) =
-      __$$OnlineVideoPlayerStateErrorImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateErrorImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateErrorImplCopyWith(
+          _$HeHeVideoPlayerStateErrorImpl value,
+          $Res Function(_$HeHeVideoPlayerStateErrorImpl) then) =
+      __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String videoUrl, String thumbnailUrl, String? error});
 }
 
 /// @nodoc
-class __$$OnlineVideoPlayerStateErrorImplCopyWithImpl<$Res>
-    extends _$OnlineVideoPlayerStateCopyWithImpl<$Res,
-        _$OnlineVideoPlayerStateErrorImpl>
-    implements _$$OnlineVideoPlayerStateErrorImplCopyWith<$Res> {
-  __$$OnlineVideoPlayerStateErrorImplCopyWithImpl(
-      _$OnlineVideoPlayerStateErrorImpl _value,
-      $Res Function(_$OnlineVideoPlayerStateErrorImpl) _then)
+class __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateErrorImpl>
+    implements _$$HeHeVideoPlayerStateErrorImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateErrorImplCopyWithImpl(
+      _$HeHeVideoPlayerStateErrorImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateErrorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1622,7 +1613,7 @@ class __$$OnlineVideoPlayerStateErrorImplCopyWithImpl<$Res>
     Object? thumbnailUrl = null,
     Object? error = freezed,
   }) {
-    return _then(_$OnlineVideoPlayerStateErrorImpl(
+    return _then(_$HeHeVideoPlayerStateErrorImpl(
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -1641,9 +1632,9 @@ class __$$OnlineVideoPlayerStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
+class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
     with DiagnosticableTreeMixin {
-  const _$OnlineVideoPlayerStateErrorImpl(
+  const _$HeHeVideoPlayerStateErrorImpl(
       {required this.videoUrl, required this.thumbnailUrl, this.error})
       : super._();
 
@@ -1656,14 +1647,14 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnlineVideoPlayerState.error(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, error: $error)';
+    return 'HeHeVideoPlayerState.error(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, error: $error)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnlineVideoPlayerState.error'))
+      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.error'))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
       ..add(DiagnosticsProperty('error', error));
@@ -1673,7 +1664,7 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OnlineVideoPlayerStateErrorImpl &&
+            other is _$HeHeVideoPlayerStateErrorImpl &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
@@ -1684,14 +1675,14 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   @override
   int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl, error);
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OnlineVideoPlayerStateErrorImplCopyWith<_$OnlineVideoPlayerStateErrorImpl>
-      get copyWith => __$$OnlineVideoPlayerStateErrorImplCopyWithImpl<
-          _$OnlineVideoPlayerStateErrorImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateErrorImplCopyWith<_$HeHeVideoPlayerStateErrorImpl>
+      get copyWith => __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<
+          _$HeHeVideoPlayerStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1753,15 +1744,15 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(OnlineVideoPlayerStateIdle value) idle,
-    required TResult Function(OnlineVideoPlayerStateInitial value) initial,
-    required TResult Function(OnlineVideoPlayerStateInitialized value)
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
-    required TResult Function(OnlineVideoPlayerStatePlaying value) playing,
-    required TResult Function(OnlineVideoPlayerStatePaused value) paused,
-    required TResult Function(OnlineVideoPlayerStateBuffering value) buffering,
-    required TResult Function(OnlineVideoPlayerStateCompleted value) completed,
-    required TResult Function(OnlineVideoPlayerStateError value) error,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
     return error(this);
   }
@@ -1769,14 +1760,14 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult? Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult? Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult? Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult? Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult? Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult? Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult? Function(OnlineVideoPlayerStateError value)? error,
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -1784,14 +1775,14 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(OnlineVideoPlayerStateIdle value)? idle,
-    TResult Function(OnlineVideoPlayerStateInitial value)? initial,
-    TResult Function(OnlineVideoPlayerStateInitialized value)? initialized,
-    TResult Function(OnlineVideoPlayerStatePlaying value)? playing,
-    TResult Function(OnlineVideoPlayerStatePaused value)? paused,
-    TResult Function(OnlineVideoPlayerStateBuffering value)? buffering,
-    TResult Function(OnlineVideoPlayerStateCompleted value)? completed,
-    TResult Function(OnlineVideoPlayerStateError value)? error,
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1801,20 +1792,20 @@ class _$OnlineVideoPlayerStateErrorImpl extends OnlineVideoPlayerStateError
   }
 }
 
-abstract class OnlineVideoPlayerStateError extends OnlineVideoPlayerState {
-  const factory OnlineVideoPlayerStateError(
+abstract class HeHeVideoPlayerStateError extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateError(
       {required final String videoUrl,
       required final String thumbnailUrl,
-      final String? error}) = _$OnlineVideoPlayerStateErrorImpl;
-  const OnlineVideoPlayerStateError._() : super._();
+      final String? error}) = _$HeHeVideoPlayerStateErrorImpl;
+  const HeHeVideoPlayerStateError._() : super._();
 
   String get videoUrl;
   String get thumbnailUrl;
   String? get error;
 
-  /// Create a copy of OnlineVideoPlayerState
+  /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OnlineVideoPlayerStateErrorImplCopyWith<_$OnlineVideoPlayerStateErrorImpl>
+  _$$HeHeVideoPlayerStateErrorImplCopyWith<_$HeHeVideoPlayerStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

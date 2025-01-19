@@ -1,6 +1,6 @@
 import 'package:cosmoplay/network/model/hehe_video.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/online_video_player_controller.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/online_video_player_state.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/base_state.dart';
 import 'package:get/get.dart' hide Trans;
@@ -20,10 +20,10 @@ class VideoDetailScene extends StatefulWidget {
 
 class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene> {
   final _heheVideo = Get.arguments as HeHeVideo;
-  final _onlineVideoPlayController = Get.find<OnlineVideoPlayerController>();
+  final _onlineVideoPlayController = Get.find<HeHeVideoPlayerController>();
   bool get _isLoading => switch (_onlineVideoPlayController.playerState) {
-        final OnlineVideoPlayerStateInitial _ => true,
-        final OnlineVideoPlayerStateIdle _ => true,
+        final HeHeVideoPlayerStateInitial _ => true,
+        final HeHeVideoPlayerStateIdle _ => true,
         _ => false,
       };
 

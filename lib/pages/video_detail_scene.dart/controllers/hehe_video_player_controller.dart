@@ -1,22 +1,20 @@
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/online_video_player_state.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:video_player/video_player.dart';
 
-class OnlineVideoPlayerController extends GetxController {
+class HeHeVideoPlayerController extends GetxController {
   late VideoPlayerController videoPlayerController;
-  final _rxPlayerState = Rx<OnlineVideoPlayerState>(
-    const OnlineVideoPlayerState.idle(),
+  final _rxPlayerState = Rx<HeHeVideoPlayerState>(
+    const HeHeVideoPlayerState.idle(),
   );
-  OnlineVideoPlayerState get playerState => _rxPlayerState.value;
-  // set setVideoPlayerState(OnlineVideoPlayerState newState) =>
-  //     _rxVideoPlayerState.value = newState;
+  HeHeVideoPlayerState get playerState => _rxPlayerState.value;
 
   Future<void> initializeVideo(
     String videoUrl,
     String thumbnailUrl,
   ) async {
-    _rxPlayerState.value = OnlineVideoPlayerState.initial(
+    _rxPlayerState.value = HeHeVideoPlayerState.initial(
       videoUrl: videoUrl,
       thumbnailUrl: thumbnailUrl,
     );
@@ -25,7 +23,7 @@ class OnlineVideoPlayerController extends GetxController {
       videoPlayerController = VideoPlayerController.networkUrl(url);
       await videoPlayerController.initialize();
 
-      _rxPlayerState.value = OnlineVideoPlayerState.initialized(
+      _rxPlayerState.value = HeHeVideoPlayerState.initialized(
         videoUrl: url,
         thumbnailUrl: thumbnailUrl,
         length: videoPlayerController.value.duration,
@@ -34,12 +32,12 @@ class OnlineVideoPlayerController extends GetxController {
       videoPlayerController.addListener(
         () {
           if (videoPlayerController.value.isBuffering) {
-            _rxPlayerState.value = OnlineVideoPlayerState.buffering(
+            _rxPlayerState.value = HeHeVideoPlayerState.buffering(
               videoUrl: url,
               currentPosition: videoPlayerController.value.position,
             );
           } else if (videoPlayerController.value.isPlaying) {
-            _rxPlayerState.value = OnlineVideoPlayerState.playing(
+            _rxPlayerState.value = HeHeVideoPlayerState.playing(
               videoUrl: url,
               currentPosition: videoPlayerController.value.position,
             );
@@ -47,7 +45,7 @@ class OnlineVideoPlayerController extends GetxController {
         },
       );
     } catch (e) {
-      _rxPlayerState.value = OnlineVideoPlayerState.error(
+      _rxPlayerState.value = HeHeVideoPlayerState.error(
         videoUrl: videoUrl,
         thumbnailUrl: thumbnailUrl,
         error: e.toString(),
@@ -61,21 +59,21 @@ class OnlineVideoPlayerController extends GetxController {
     _rxPlayerState.listen(
       (playerState) {
         switch (playerState) {
-          case final OnlineVideoPlayerStateIdle state:
+          case final HeHeVideoPlayerStateIdle state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStateInitial state:
+          case final HeHeVideoPlayerStateInitial state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStateInitialized state:
+          case final HeHeVideoPlayerStateInitialized state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStatePlaying state:
+          case final HeHeVideoPlayerStatePlaying state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStatePaused state:
+          case final HeHeVideoPlayerStatePaused state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStateBuffering state:
+          case final HeHeVideoPlayerStateBuffering state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStateCompleted state:
+          case final HeHeVideoPlayerStateCompleted state:
             debugPrint(state.toString());
-          case final OnlineVideoPlayerStateError state:
+          case final HeHeVideoPlayerStateError state:
             debugPrint(
               state.error.toString(),
             );
