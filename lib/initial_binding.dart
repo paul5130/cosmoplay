@@ -19,8 +19,8 @@ class InitialBinding extends Bindings {
       () => HeHeVideoPlayerController(),
       fenix: true,
     );
-    Get.lazyPut<GetVideoListController>(
-      () => GetVideoListController(),
+    Get.lazyPut<GetVideoListService>(
+      () => GetVideoListService(),
       fenix: true,
     );
   }

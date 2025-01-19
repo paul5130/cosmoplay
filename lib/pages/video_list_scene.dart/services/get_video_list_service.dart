@@ -5,7 +5,7 @@ import 'package:cosmoplay/pages/video_list_scene.dart/controllers/get_video_list
 import 'package:flutter/services.dart';
 import 'package:get/get.dart' hide Trans;
 
-class GetVideoListController extends GetxService {
+class GetVideoListService extends GetxService {
   final _rxState = Rx<GetVideoListState>(
     const GetVideoListState.initial(),
   );

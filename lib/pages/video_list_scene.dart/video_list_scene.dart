@@ -18,7 +18,7 @@ class VideoListScene extends StatefulWidget {
 }
 
 class _VideoListSceneState extends BaseSceneState<VideoListScene> {
-  final _getVideoListController = Get.find<GetVideoListController>();
+  final _getVideoListController = Get.find<GetVideoListService>();
 
   @override
   void initState() {
