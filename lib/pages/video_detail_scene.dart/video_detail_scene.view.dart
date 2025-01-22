@@ -5,36 +5,13 @@ class _VideoDetailSceneStateWidgetBuilder
   _VideoDetailSceneStateWidgetBuilder(super.state);
 
   @override
-  Widget sceneWidget(BuildContext context) => Obx(
-        () => Scaffold(
-          appBar: AppBar(
-            title: Text('Video Player'),
-          ),
-          body: Center(
-            child: state._isLoading
-                ? Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Align(
-                        alignment: Alignment.center,
-                        child: Image.network(
-                          state._heheVideo.imageUrl,
-                          fit: BoxFit.contain,
-                        ),
-                      ),
-                      Center(
-                        child: CircularProgressIndicator(),
-                      ),
-                    ],
-                  )
-                : AspectRatio(
-                    aspectRatio: state._onlineVideoPlayController
-                        .videoPlayerController.value.aspectRatio,
-                    child: VideoPlayer(
-                      state._onlineVideoPlayController.videoPlayerController,
-                    ),
-                  ),
-          ),
+  Widget sceneWidget(BuildContext context) => Scaffold(
+        appBar: AppBar(
+          title: Text('Video Player'),
+        ),
+        body: HeheVideoPlayer(
+          videoUrl: state._heheVideo.videoUrl,
+          thumbnailUrl: state._heheVideo.imageUrl,
         ),
       );
 }

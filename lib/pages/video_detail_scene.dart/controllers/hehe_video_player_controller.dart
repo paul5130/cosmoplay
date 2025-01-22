@@ -5,9 +5,8 @@ import 'package:video_player/video_player.dart';
 
 class HeHeVideoPlayerController extends GetxController {
   late VideoPlayerController videoPlayerController;
-  final _rxPlayerState = Rx<HeHeVideoPlayerState>(
-    const HeHeVideoPlayerState.idle(),
-  );
+  final Rx<HeHeVideoPlayerState> _rxPlayerState =
+      HeHeVideoPlayerState.idle().obs;
   HeHeVideoPlayerState get playerState => _rxPlayerState.value;
 
   Future<void> initializeVideo(
@@ -24,33 +23,59 @@ class HeHeVideoPlayerController extends GetxController {
       await videoPlayerController.initialize();
 
       _rxPlayerState.value = HeHeVideoPlayerState.initialized(
-        videoUrl: url,
-        thumbnailUrl: thumbnailUrl,
         length: videoPlayerController.value.duration,
       );
-      await videoPlayerController.play();
+      if (videoPlayerController.value.isInitialized) {
+        await videoPlayerController.play();
+      }
       videoPlayerController.addListener(
-        () {
-          if (videoPlayerController.value.isBuffering) {
-            _rxPlayerState.value = HeHeVideoPlayerState.buffering(
-              videoUrl: url,
-              currentPosition: videoPlayerController.value.position,
-            );
-          } else if (videoPlayerController.value.isPlaying) {
-            _rxPlayerState.value = HeHeVideoPlayerState.playing(
-              videoUrl: url,
-              currentPosition: videoPlayerController.value.position,
-            );
-          }
-        },
+        _videoPlayerListener,
       );
     } catch (e) {
       _rxPlayerState.value = HeHeVideoPlayerState.error(
-        videoUrl: videoUrl,
-        thumbnailUrl: thumbnailUrl,
         error: e.toString(),
       );
     }
+  }
+
+  void seekTo(Duration position) {
+    videoPlayerController.seekTo(position);
+  }
+
+  void _videoPlayerListener() {
+    if (videoPlayerController.value.isBuffering) {
+      _rxPlayerState.value = HeHeVideoPlayerState.buffering();
+    } else if (videoPlayerController.value.isPlaying) {
+      _rxPlayerState.value = HeHeVideoPlayerState.playing(
+        currentPosition: videoPlayerController.value.position,
+      );
+    } else if (videoPlayerController.value.position >=
+        videoPlayerController.value.duration -
+            const Duration(milliseconds: 500)) {
+      _rxPlayerState.value = HeHeVideoPlayerState.completed();
+    }
+  }
+
+  Future<void> pause() async {
+    await videoPlayerController.pause();
+    _rxPlayerState.value = HeHeVideoPlayerState.paused(
+      currentPosition: videoPlayerController.value.position,
+    );
+  }
+
+  Future<void> resume() async {
+    await videoPlayerController.play();
+    _rxPlayerState.value = HeHeVideoPlayerState.playing(
+      currentPosition: videoPlayerController.value.position,
+    );
+  }
+
+  Future<void> stop() async {
+    await videoPlayerController.pause();
+    await videoPlayerController.seekTo(
+      Duration.zero,
+    );
+    _rxPlayerState.value = HeHeVideoPlayerState.idle();
   }
 
   @override
@@ -58,34 +83,21 @@ class HeHeVideoPlayerController extends GetxController {
     super.onInit();
     _rxPlayerState.listen(
       (playerState) {
-        switch (playerState) {
-          case final HeHeVideoPlayerStateIdle state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStateInitial state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStateInitialized state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStatePlaying state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStatePaused state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStateBuffering state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStateCompleted state:
-            debugPrint(state.toString());
-          case final HeHeVideoPlayerStateError state:
-            debugPrint(
-              state.error.toString(),
-            );
-        }
+        debugPrint(
+          playerState.toString(),
+        );
       },
     );
   }
 
   @override
   void dispose() {
-    videoPlayerController.dispose();
-
+    if (videoPlayerController.value.isInitialized) {
+      videoPlayerController.removeListener(
+        _videoPlayerListener,
+      );
+      videoPlayerController.dispose();
+    }
     super.dispose();
   }
 }

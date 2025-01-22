@@ -1,7 +1,9 @@
 import 'package:cosmoplay/flavors.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
-import 'package:cosmoplay/pages/video_list_scene.dart/controllers/get_video_list_controller.dart';
+
 import 'package:get/get.dart';
+
+import 'pages/video_list_scene.dart/services/get_video_list_service.dart';
 
 class InitialBinding extends Bindings {
   final FlavorConfig flavorConfig;

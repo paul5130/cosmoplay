@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:cosmoplay/network/model/hehe_video.dart';
-import 'package:cosmoplay/pages/video_list_scene.dart/controllers/get_video_list_state.dart';
+import 'package:cosmoplay/pages/video_list_scene.dart/services/get_video_list_state.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart' hide Trans;
 

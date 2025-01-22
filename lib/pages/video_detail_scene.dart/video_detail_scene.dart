@@ -1,10 +1,12 @@
 import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_state.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/widgets/hehe_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/base_state.dart';
 import 'package:get/get.dart' hide Trans;
 import 'package:video_player/video_player.dart';
+
+import 'controllers/hehe_video_player_state.dart';
 
 part 'video_detail_scene.view.dart';
 part 'video_detail_scene_binding.dart';
@@ -20,25 +22,20 @@ class VideoDetailScene extends StatefulWidget {
 
 class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene> {
   final _heheVideo = Get.arguments as HeHeVideo;
-  final _onlineVideoPlayController = Get.find<HeHeVideoPlayerController>();
-  bool get _isLoading => switch (_onlineVideoPlayController.playerState) {
-        final HeHeVideoPlayerStateInitial _ => true,
-        final HeHeVideoPlayerStateIdle _ => true,
-        _ => false,
-      };
+  // final _onlineVideoPlayController = Get.find<HeHeVideoPlayerController>();
 
   @override
   void initState() {
     super.initState();
-    _onlineVideoPlayController.initializeVideo(
-      _heheVideo.videoUrl,
-      _heheVideo.imageUrl,
-    );
+    // _onlineVideoPlayController.initializeVideo(
+    //   _heheVideo.videoUrl,
+    //   _heheVideo.imageUrl,
+    // );
   }
 
   @override
   void dispose() {
-    _onlineVideoPlayController.dispose();
+    // _onlineVideoPlayController.dispose();
     super.dispose();
   }
 

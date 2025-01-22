@@ -20,44 +20,36 @@ mixin _$HeHeVideoPlayerState {
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -177,16 +169,12 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
     return idle();
   }
@@ -196,14 +184,12 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
     return idle?.call();
   }
@@ -213,14 +199,12 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -381,16 +365,12 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
     return initial(videoUrl, thumbnailUrl);
   }
@@ -400,14 +380,12 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
     return initial?.call(videoUrl, thumbnailUrl);
   }
@@ -417,14 +395,12 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -507,7 +483,7 @@ abstract class _$$HeHeVideoPlayerStateInitializedImplCopyWith<$Res> {
           $Res Function(_$HeHeVideoPlayerStateInitializedImpl) then) =
       __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Uri videoUrl, String thumbnailUrl, Duration length});
+  $Res call({Duration length});
 }
 
 /// @nodoc
@@ -525,19 +501,9 @@ class __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? videoUrl = null,
-    Object? thumbnailUrl = null,
     Object? length = null,
   }) {
     return _then(_$HeHeVideoPlayerStateInitializedImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
       length: null == length
           ? _value.length
           : length // ignore: cast_nullable_to_non_nullable
@@ -550,22 +516,15 @@ class __$$HeHeVideoPlayerStateInitializedImplCopyWithImpl<$Res>
 
 class _$HeHeVideoPlayerStateInitializedImpl
     extends HeHeVideoPlayerStateInitialized with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStateInitializedImpl(
-      {required this.videoUrl,
-      required this.thumbnailUrl,
-      required this.length})
+  const _$HeHeVideoPlayerStateInitializedImpl({required this.length})
       : super._();
 
-  @override
-  final Uri videoUrl;
-  @override
-  final String thumbnailUrl;
   @override
   final Duration length;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.initialized(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, length: $length)';
+    return 'HeHeVideoPlayerState.initialized(length: $length)';
   }
 
   @override
@@ -573,8 +532,6 @@ class _$HeHeVideoPlayerStateInitializedImpl
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.initialized'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl))
-      ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
       ..add(DiagnosticsProperty('length', length));
   }
 
@@ -583,15 +540,11 @@ class _$HeHeVideoPlayerStateInitializedImpl
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HeHeVideoPlayerStateInitializedImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.length, length) || other.length == length));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl, length);
+  int get hashCode => Object.hash(runtimeType, length);
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
@@ -608,18 +561,14 @@ class _$HeHeVideoPlayerStateInitializedImpl
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return initialized(videoUrl, thumbnailUrl, length);
+    return initialized(length);
   }
 
   @override
@@ -627,16 +576,14 @@ class _$HeHeVideoPlayerStateInitializedImpl
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return initialized?.call(videoUrl, thumbnailUrl, length);
+    return initialized?.call(length);
   }
 
   @override
@@ -644,18 +591,16 @@ class _$HeHeVideoPlayerStateInitializedImpl
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(videoUrl, thumbnailUrl, length);
+      return initialized(length);
     }
     return orElse();
   }
@@ -713,13 +658,9 @@ class _$HeHeVideoPlayerStateInitializedImpl
 
 abstract class HeHeVideoPlayerStateInitialized extends HeHeVideoPlayerState {
   const factory HeHeVideoPlayerStateInitialized(
-      {required final Uri videoUrl,
-      required final String thumbnailUrl,
-      required final Duration length}) = _$HeHeVideoPlayerStateInitializedImpl;
+      {required final Duration length}) = _$HeHeVideoPlayerStateInitializedImpl;
   const HeHeVideoPlayerStateInitialized._() : super._();
 
-  Uri get videoUrl;
-  String get thumbnailUrl;
   Duration get length;
 
   /// Create a copy of HeHeVideoPlayerState
@@ -737,7 +678,7 @@ abstract class _$$HeHeVideoPlayerStatePlayingImplCopyWith<$Res> {
           $Res Function(_$HeHeVideoPlayerStatePlayingImpl) then) =
       __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Uri videoUrl, Duration currentPosition});
+  $Res call({Duration currentPosition});
 }
 
 /// @nodoc
@@ -755,14 +696,9 @@ class __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? videoUrl = null,
     Object? currentPosition = null,
   }) {
     return _then(_$HeHeVideoPlayerStatePlayingImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
       currentPosition: null == currentPosition
           ? _value.currentPosition
           : currentPosition // ignore: cast_nullable_to_non_nullable
@@ -775,18 +711,15 @@ class __$$HeHeVideoPlayerStatePlayingImplCopyWithImpl<$Res>
 
 class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStatePlayingImpl(
-      {required this.videoUrl, required this.currentPosition})
+  const _$HeHeVideoPlayerStatePlayingImpl({required this.currentPosition})
       : super._();
 
-  @override
-  final Uri videoUrl;
   @override
   final Duration currentPosition;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.playing(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.playing(currentPosition: $currentPosition)';
   }
 
   @override
@@ -794,7 +727,6 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.playing'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('currentPosition', currentPosition));
   }
 
@@ -803,14 +735,12 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HeHeVideoPlayerStatePlayingImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl) &&
             (identical(other.currentPosition, currentPosition) ||
                 other.currentPosition == currentPosition));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
+  int get hashCode => Object.hash(runtimeType, currentPosition);
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
@@ -826,18 +756,14 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return playing(videoUrl, currentPosition);
+    return playing(currentPosition);
   }
 
   @override
@@ -845,16 +771,14 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return playing?.call(videoUrl, currentPosition);
+    return playing?.call(currentPosition);
   }
 
   @override
@@ -862,18 +786,16 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (playing != null) {
-      return playing(videoUrl, currentPosition);
+      return playing(currentPosition);
     }
     return orElse();
   }
@@ -931,12 +853,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
 
 abstract class HeHeVideoPlayerStatePlaying extends HeHeVideoPlayerState {
   const factory HeHeVideoPlayerStatePlaying(
-          {required final Uri videoUrl,
-          required final Duration currentPosition}) =
+          {required final Duration currentPosition}) =
       _$HeHeVideoPlayerStatePlayingImpl;
   const HeHeVideoPlayerStatePlaying._() : super._();
 
-  Uri get videoUrl;
   Duration get currentPosition;
 
   /// Create a copy of HeHeVideoPlayerState
@@ -953,7 +873,7 @@ abstract class _$$HeHeVideoPlayerStatePausedImplCopyWith<$Res> {
           $Res Function(_$HeHeVideoPlayerStatePausedImpl) then) =
       __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Uri videoUrl, Duration currentPosition});
+  $Res call({Duration currentPosition});
 }
 
 /// @nodoc
@@ -971,14 +891,9 @@ class __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? videoUrl = null,
     Object? currentPosition = null,
   }) {
     return _then(_$HeHeVideoPlayerStatePausedImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
       currentPosition: null == currentPosition
           ? _value.currentPosition
           : currentPosition // ignore: cast_nullable_to_non_nullable
@@ -991,18 +906,15 @@ class __$$HeHeVideoPlayerStatePausedImplCopyWithImpl<$Res>
 
 class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStatePausedImpl(
-      {required this.videoUrl, required this.currentPosition})
+  const _$HeHeVideoPlayerStatePausedImpl({required this.currentPosition})
       : super._();
 
-  @override
-  final Uri videoUrl;
   @override
   final Duration currentPosition;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.paused(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.paused(currentPosition: $currentPosition)';
   }
 
   @override
@@ -1010,7 +922,6 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.paused'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('currentPosition', currentPosition));
   }
 
@@ -1019,14 +930,12 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HeHeVideoPlayerStatePausedImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl) &&
             (identical(other.currentPosition, currentPosition) ||
                 other.currentPosition == currentPosition));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
+  int get hashCode => Object.hash(runtimeType, currentPosition);
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
@@ -1042,18 +951,14 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return paused(videoUrl, currentPosition);
+    return paused(currentPosition);
   }
 
   @override
@@ -1061,16 +966,14 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return paused?.call(videoUrl, currentPosition);
+    return paused?.call(currentPosition);
   }
 
   @override
@@ -1078,18 +981,16 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (paused != null) {
-      return paused(videoUrl, currentPosition);
+      return paused(currentPosition);
     }
     return orElse();
   }
@@ -1147,12 +1048,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
 
 abstract class HeHeVideoPlayerStatePaused extends HeHeVideoPlayerState {
   const factory HeHeVideoPlayerStatePaused(
-          {required final Uri videoUrl,
-          required final Duration currentPosition}) =
+          {required final Duration currentPosition}) =
       _$HeHeVideoPlayerStatePausedImpl;
   const HeHeVideoPlayerStatePaused._() : super._();
 
-  Uri get videoUrl;
   Duration get currentPosition;
 
   /// Create a copy of HeHeVideoPlayerState
@@ -1168,8 +1067,6 @@ abstract class _$$HeHeVideoPlayerStateBufferingImplCopyWith<$Res> {
           _$HeHeVideoPlayerStateBufferingImpl value,
           $Res Function(_$HeHeVideoPlayerStateBufferingImpl) then) =
       __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Uri videoUrl, Duration currentPosition});
 }
 
 /// @nodoc
@@ -1184,93 +1081,49 @@ class __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<$Res>
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? videoUrl = null,
-    Object? currentPosition = null,
-  }) {
-    return _then(_$HeHeVideoPlayerStateBufferingImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-      currentPosition: null == currentPosition
-          ? _value.currentPosition
-          : currentPosition // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStateBufferingImpl(
-      {required this.videoUrl, required this.currentPosition})
-      : super._();
-
-  @override
-  final Uri videoUrl;
-  @override
-  final Duration currentPosition;
+  const _$HeHeVideoPlayerStateBufferingImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.buffering(videoUrl: $videoUrl, currentPosition: $currentPosition)';
+    return 'HeHeVideoPlayerState.buffering()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.buffering'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl))
-      ..add(DiagnosticsProperty('currentPosition', currentPosition));
+        .add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.buffering'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HeHeVideoPlayerStateBufferingImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl) &&
-            (identical(other.currentPosition, currentPosition) ||
-                other.currentPosition == currentPosition));
+            other is _$HeHeVideoPlayerStateBufferingImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, currentPosition);
-
-  /// Create a copy of HeHeVideoPlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$HeHeVideoPlayerStateBufferingImplCopyWith<
-          _$HeHeVideoPlayerStateBufferingImpl>
-      get copyWith => __$$HeHeVideoPlayerStateBufferingImplCopyWithImpl<
-          _$HeHeVideoPlayerStateBufferingImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return buffering(videoUrl, currentPosition);
+    return buffering();
   }
 
   @override
@@ -1278,16 +1131,14 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return buffering?.call(videoUrl, currentPosition);
+    return buffering?.call();
   }
 
   @override
@@ -1295,18 +1146,16 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (buffering != null) {
-      return buffering(videoUrl, currentPosition);
+      return buffering();
     }
     return orElse();
   }
@@ -1363,21 +1212,9 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
 }
 
 abstract class HeHeVideoPlayerStateBuffering extends HeHeVideoPlayerState {
-  const factory HeHeVideoPlayerStateBuffering(
-          {required final Uri videoUrl,
-          required final Duration currentPosition}) =
+  const factory HeHeVideoPlayerStateBuffering() =
       _$HeHeVideoPlayerStateBufferingImpl;
   const HeHeVideoPlayerStateBuffering._() : super._();
-
-  Uri get videoUrl;
-  Duration get currentPosition;
-
-  /// Create a copy of HeHeVideoPlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HeHeVideoPlayerStateBufferingImplCopyWith<
-          _$HeHeVideoPlayerStateBufferingImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1386,8 +1223,6 @@ abstract class _$$HeHeVideoPlayerStateCompletedImplCopyWith<$Res> {
           _$HeHeVideoPlayerStateCompletedImpl value,
           $Res Function(_$HeHeVideoPlayerStateCompletedImpl) then) =
       __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({Uri videoUrl});
 }
 
 /// @nodoc
@@ -1402,82 +1237,49 @@ class __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<$Res>
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? videoUrl = null,
-  }) {
-    return _then(_$HeHeVideoPlayerStateCompletedImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as Uri,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStateCompletedImpl({required this.videoUrl})
-      : super._();
-
-  @override
-  final Uri videoUrl;
+  const _$HeHeVideoPlayerStateCompletedImpl() : super._();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.completed(videoUrl: $videoUrl)';
+    return 'HeHeVideoPlayerState.completed()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.completed'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl));
+        .add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.completed'));
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HeHeVideoPlayerStateCompletedImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl));
+            other is _$HeHeVideoPlayerStateCompletedImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl);
-
-  /// Create a copy of HeHeVideoPlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$HeHeVideoPlayerStateCompletedImplCopyWith<
-          _$HeHeVideoPlayerStateCompletedImpl>
-      get copyWith => __$$HeHeVideoPlayerStateCompletedImplCopyWithImpl<
-          _$HeHeVideoPlayerStateCompletedImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return completed(videoUrl);
+    return completed();
   }
 
   @override
@@ -1485,16 +1287,14 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return completed?.call(videoUrl);
+    return completed?.call();
   }
 
   @override
@@ -1502,18 +1302,16 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (completed != null) {
-      return completed(videoUrl);
+      return completed();
     }
     return orElse();
   }
@@ -1570,18 +1368,9 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
 }
 
 abstract class HeHeVideoPlayerStateCompleted extends HeHeVideoPlayerState {
-  const factory HeHeVideoPlayerStateCompleted({required final Uri videoUrl}) =
+  const factory HeHeVideoPlayerStateCompleted() =
       _$HeHeVideoPlayerStateCompletedImpl;
   const HeHeVideoPlayerStateCompleted._() : super._();
-
-  Uri get videoUrl;
-
-  /// Create a copy of HeHeVideoPlayerState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HeHeVideoPlayerStateCompletedImplCopyWith<
-          _$HeHeVideoPlayerStateCompletedImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1591,7 +1380,7 @@ abstract class _$$HeHeVideoPlayerStateErrorImplCopyWith<$Res> {
           $Res Function(_$HeHeVideoPlayerStateErrorImpl) then) =
       __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String videoUrl, String thumbnailUrl, String? error});
+  $Res call({String? error});
 }
 
 /// @nodoc
@@ -1609,19 +1398,9 @@ class __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? videoUrl = null,
-    Object? thumbnailUrl = null,
     Object? error = freezed,
   }) {
     return _then(_$HeHeVideoPlayerStateErrorImpl(
-      videoUrl: null == videoUrl
-          ? _value.videoUrl
-          : videoUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumbnailUrl: null == thumbnailUrl
-          ? _value.thumbnailUrl
-          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
       error: freezed == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -1634,20 +1413,14 @@ class __$$HeHeVideoPlayerStateErrorImplCopyWithImpl<$Res>
 
 class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStateErrorImpl(
-      {required this.videoUrl, required this.thumbnailUrl, this.error})
-      : super._();
+  const _$HeHeVideoPlayerStateErrorImpl({this.error}) : super._();
 
-  @override
-  final String videoUrl;
-  @override
-  final String thumbnailUrl;
   @override
   final String? error;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.error(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl, error: $error)';
+    return 'HeHeVideoPlayerState.error(error: $error)';
   }
 
   @override
@@ -1655,8 +1428,6 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.error'))
-      ..add(DiagnosticsProperty('videoUrl', videoUrl))
-      ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl))
       ..add(DiagnosticsProperty('error', error));
   }
 
@@ -1665,15 +1436,11 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HeHeVideoPlayerStateErrorImpl &&
-            (identical(other.videoUrl, videoUrl) ||
-                other.videoUrl == videoUrl) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
             (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl, error);
+  int get hashCode => Object.hash(runtimeType, error);
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
@@ -1689,18 +1456,14 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
     required TResult Function(String videoUrl, String thumbnailUrl) initial,
-    required TResult Function(
-            Uri videoUrl, String thumbnailUrl, Duration length)
-        initialized,
-    required TResult Function(Uri videoUrl, Duration currentPosition) playing,
-    required TResult Function(Uri videoUrl, Duration currentPosition) paused,
-    required TResult Function(Uri videoUrl, Duration currentPosition) buffering,
-    required TResult Function(Uri videoUrl) completed,
-    required TResult Function(
-            String videoUrl, String thumbnailUrl, String? error)
-        error,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
   }) {
-    return error(videoUrl, thumbnailUrl, this.error);
+    return error(this.error);
   }
 
   @override
@@ -1708,16 +1471,14 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
     TResult? Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult? Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult? Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult? Function(Uri videoUrl)? completed,
-    TResult? Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
   }) {
-    return error?.call(videoUrl, thumbnailUrl, this.error);
+    return error?.call(this.error);
   }
 
   @override
@@ -1725,18 +1486,16 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
     TResult Function(String videoUrl, String thumbnailUrl)? initial,
-    TResult Function(Uri videoUrl, String thumbnailUrl, Duration length)?
-        initialized,
-    TResult Function(Uri videoUrl, Duration currentPosition)? playing,
-    TResult Function(Uri videoUrl, Duration currentPosition)? paused,
-    TResult Function(Uri videoUrl, Duration currentPosition)? buffering,
-    TResult Function(Uri videoUrl)? completed,
-    TResult Function(String videoUrl, String thumbnailUrl, String? error)?
-        error,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(videoUrl, thumbnailUrl, this.error);
+      return error(this.error);
     }
     return orElse();
   }
@@ -1793,14 +1552,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
 }
 
 abstract class HeHeVideoPlayerStateError extends HeHeVideoPlayerState {
-  const factory HeHeVideoPlayerStateError(
-      {required final String videoUrl,
-      required final String thumbnailUrl,
-      final String? error}) = _$HeHeVideoPlayerStateErrorImpl;
+  const factory HeHeVideoPlayerStateError({final String? error}) =
+      _$HeHeVideoPlayerStateErrorImpl;
   const HeHeVideoPlayerStateError._() : super._();
 
-  String get videoUrl;
-  String get thumbnailUrl;
   String? get error;
 
   /// Create a copy of HeHeVideoPlayerState
