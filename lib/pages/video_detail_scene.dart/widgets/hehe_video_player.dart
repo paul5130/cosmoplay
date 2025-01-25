@@ -63,167 +63,123 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
             snapshot,
           ) =>
               Obx(
-            () => switch (_onlineVideoPlayController.playerState) {
-              HeHeVideoPlayerStateIdle() => loadingView(),
-              HeHeVideoPlayerStateInitial() => loadingView(),
-              final HeHeVideoPlayerStateInitialized state =>
-                playerView(snapshot, state),
-              final HeHeVideoPlayerStatePlaying state =>
-                playerView(snapshot, state),
-              final HeHeVideoPlayerStatePaused state =>
-                playerView(snapshot, state),
-              HeHeVideoPlayerStateBuffering() => loadingView(),
-              final HeHeVideoPlayerStateCompleted state =>
-                playerView(snapshot, state),
-              final HeHeVideoPlayerStateError state => Center(
-                  child: Text('error: ${state.error}'),
-                ),
-            },
+            () => Stack(
+              alignment: Alignment.center,
+              children: [
+                if (_onlineVideoPlayController.playerState
+                    is HeHeVideoPlayerStateError) ...[
+                  Center(
+                    child: Text(
+                      'error: ${(_onlineVideoPlayController.playerState as HeHeVideoPlayerStateError).error}',
+                    ),
+                  ),
+                ],
+                if (_onlineVideoPlayController.playerState
+                        is HeHeVideoPlayerStateInitial ||
+                    _onlineVideoPlayController.playerState
+                        is HeHeVideoPlayerStateBuffering ||
+                    _onlineVideoPlayController.playerState
+                        is HeHeVideoPlayerStateIdle ||
+                    _onlineVideoPlayController.playerState
+                        is HeHeVideoPlayerStateInitialized) ...[
+                  Align(
+                    alignment: Alignment.center,
+                    child: Image.network(
+                      widget.thumbnailUrl,
+                      fit: BoxFit.contain,
+                      width: double.infinity,
+                      height: double.infinity,
+                    ),
+                  ),
+                  Center(
+                    child: CircularProgressIndicator(),
+                  )
+                ],
+                if (snapshot.connectionState == ConnectionState.done &&
+                    (_onlineVideoPlayController.playerState
+                            is HeHeVideoPlayerStatePaused ||
+                        _onlineVideoPlayController.playerState
+                            is HeHeVideoPlayerStateCompleted ||
+                        _onlineVideoPlayController.playerState
+                            is HeHeVideoPlayerStatePlaying)) ...[
+                  Align(
+                    alignment: Alignment.center,
+                    child: Stack(
+                      children: [
+                        Align(
+                          alignment: Alignment.center,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              AspectRatio(
+                                aspectRatio: _onlineVideoPlayController
+                                    .videoPlayerController.value.aspectRatio,
+                                child: VideoPlayer(
+                                  _onlineVideoPlayController
+                                      .videoPlayerController,
+                                ),
+                              ),
+                              Slider(
+                                value: _onlineVideoPlayController
+                                    .videoPlayerController
+                                    .value
+                                    .position
+                                    .inMilliseconds
+                                    .toDouble(),
+                                max: _onlineVideoPlayController
+                                    .videoPlayerController
+                                    .value
+                                    .duration
+                                    .inMilliseconds
+                                    .toDouble(),
+                                onChanged: (value) {
+                                  final seekPosition =
+                                      Duration(milliseconds: value.toInt());
+                                  _onlineVideoPlayController
+                                      .videoPlayerController
+                                      .seekTo(seekPosition);
+                                },
+                                activeColor: Colors.white,
+                                inactiveColor: Colors.grey,
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.center,
+                          child: AnimatedOpacity(
+                            opacity: (_onlineVideoPlayController.playerState
+                                    is HeHeVideoPlayerStatePlaying)
+                                ? 0.2
+                                : 1.0,
+                            duration: const Duration(milliseconds: 300),
+                            child: IconButton(
+                              iconSize: 64,
+                              icon: Icon(
+                                _onlineVideoPlayController.playerState
+                                        is HeHeVideoPlayerStatePlaying
+                                    ? Icons.pause
+                                    : Icons.play_arrow,
+                                color: Colors.white,
+                              ),
+                              onPressed: () {
+                                if (_onlineVideoPlayController.playerState
+                                    is HeHeVideoPlayerStatePlaying) {
+                                  _onlineVideoPlayController.pause();
+                                } else {
+                                  _onlineVideoPlayController.resume();
+                                }
+                              },
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ],
+            ),
           ),
         ),
-        // child: Obx(
-        //   () => switch (_onlineVideoPlayController.playerState) {
-        //     HeHeVideoPlayerState.error => Center(
-        //         child: Text('error'),
-        //       ),
-        //     _ => Column(
-        //         children: [
-        //           AspectRatio(
-        //             aspectRatio: _onlineVideoPlayController
-        //                 .videoPlayerController.value.aspectRatio,
-        //             child: VideoPlayer(
-        //               _onlineVideoPlayController.videoPlayerController,
-        //             ),
-        //           ),
-        //           if (_onlineVideoPlayController.playerState
-        //               is HeHeVideoPlayerStateBuffering) ...[
-        //             Center(
-        //               child: CircularProgressIndicator(),
-        //             ),
-        //           ],
-        //           Row(
-        //             mainAxisAlignment: MainAxisAlignment.center,
-        //             children: [
-        //               IconButton(
-        //                 icon: Icon(Icons.play_arrow),
-        //                 onPressed: () {
-        //                   _onlineVideoPlayController.resume();
-        //                 },
-        //               ),
-        //               IconButton(
-        //                 icon: Icon(Icons.pause),
-        //                 onPressed: () {
-        //                   _onlineVideoPlayController.pause();
-        //                 },
-        //               ),
-        //               IconButton(
-        //                 icon: Icon(Icons.stop),
-        //                 onPressed: () {
-        //                   _onlineVideoPlayController.stop();
-        //                 },
-        //               ),
-        //             ],
-        //           ),
-        //           Slider(
-        //             value: _onlineVideoPlayController
-        //                 .videoPlayerController.value.position.inSeconds
-        //                 .toDouble(),
-        //             min: 0,
-        //             max: _onlineVideoPlayController
-        //                 .videoPlayerController.value.duration.inSeconds
-        //                 .toDouble(),
-        //             onChanged: (value) {
-        //               _onlineVideoPlayController
-        //                   .seekTo(Duration(seconds: value.toInt()));
-        //             },
-        //           ),
-        //         ],
-        //       ),
-        //   },
-        // ),
       );
-  Widget loadingView() => Stack(
-        alignment: Alignment.center,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Image.network(
-              widget.thumbnailUrl,
-              fit: BoxFit.contain,
-              width: double.infinity,
-              height: double.infinity,
-            ),
-          ),
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-        ],
-      );
-
-  Widget playerView(
-    AsyncSnapshot<void> snapshot,
-    HeHeVideoPlayerState state,
-  ) {
-    if (snapshot.connectionState == ConnectionState.done) {
-      return Column(
-        children: [
-          AspectRatio(
-            aspectRatio: _onlineVideoPlayController
-                .videoPlayerController.value.aspectRatio,
-            child: VideoPlayer(
-              _onlineVideoPlayController.videoPlayerController,
-            ),
-          ),
-          if (_onlineVideoPlayController.playerState
-              is HeHeVideoPlayerStateBuffering) ...[
-            Center(
-              child: CircularProgressIndicator(),
-            ),
-          ],
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (_onlineVideoPlayController.playerState
-                  is HeHeVideoPlayerStatePlaying) ...[
-                IconButton(
-                  icon: Icon(Icons.pause),
-                  onPressed: () {
-                    _onlineVideoPlayController.pause();
-                  },
-                ),
-              ],
-              if (_onlineVideoPlayController.playerState
-                      is HeHeVideoPlayerStatePaused ||
-                  _onlineVideoPlayController.playerState
-                      is HeHeVideoPlayerStateCompleted) ...[
-                IconButton(
-                  icon: Icon(Icons.play_arrow),
-                  onPressed: () {
-                    _onlineVideoPlayController.resume();
-                  },
-                ),
-              ],
-            ],
-          ),
-          Slider(
-            value: _onlineVideoPlayController
-                .videoPlayerController.value.position.inSeconds
-                .toDouble(),
-            min: 0,
-            max: _onlineVideoPlayController
-                .videoPlayerController.value.duration.inSeconds
-                .toDouble(),
-            onChanged: (value) {
-              _onlineVideoPlayController
-                  .seekTo(Duration(seconds: value.toInt()));
-            },
-          ),
-        ],
-      );
-    } else {
-      return Center(
-        child: CircularProgressIndicator(),
-      );
-    }
-  }
 }
