@@ -11,6 +11,7 @@ class _VideoListSceneStateWidgetBuilder
             title: Text('Search Videos'),
           ),
           body: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8),
@@ -28,8 +29,10 @@ class _VideoListSceneStateWidgetBuilder
                 ),
               ),
               state._getVideoListController.state.when(
-                initial: () => Center(child: Text('No Videos loaded')),
-                loading: () => Center(child: CircularProgressIndicator()),
+                initial: () => Center(
+                  child: Text('No Videos loaded'),
+                ),
+                loading: () => CircularProgressIndicator(),
                 success: (videos) {
                   if (videos.isEmpty) {
                     return Center(
