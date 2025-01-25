@@ -1,12 +1,8 @@
 import 'package:cosmoplay/network/model/hehe_video.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/widgets/hehe_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/base_state.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:video_player/video_player.dart';
-
-import 'controllers/hehe_video_player_state.dart';
 
 part 'video_detail_scene.view.dart';
 part 'video_detail_scene_binding.dart';

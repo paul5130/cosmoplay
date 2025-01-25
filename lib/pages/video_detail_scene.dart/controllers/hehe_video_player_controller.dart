@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Trans;
@@ -9,17 +11,49 @@ class HeHeVideoPlayerController extends GetxController {
       HeHeVideoPlayerState.idle().obs;
   HeHeVideoPlayerState get playerState => _rxPlayerState.value;
 
-  Future<void> initializeVideo(
+  Future<void> initializeVideoWithNetwork(
+    String videoId,
     String videoUrl,
     String thumbnailUrl,
   ) async {
-    _rxPlayerState.value = HeHeVideoPlayerState.initial(
+    _rxPlayerState.value = HeHeVideoPlayerState.initialWithNetwork(
+      videoId: videoId,
       videoUrl: videoUrl,
       thumbnailUrl: thumbnailUrl,
     );
     try {
       final url = Uri.parse(videoUrl);
       videoPlayerController = VideoPlayerController.networkUrl(url);
+      await videoPlayerController.initialize();
+
+      _rxPlayerState.value = HeHeVideoPlayerState.initialized(
+        length: videoPlayerController.value.duration,
+      );
+      if (videoPlayerController.value.isInitialized) {
+        await videoPlayerController.play();
+      }
+      videoPlayerController.addListener(
+        _videoPlayerListener,
+      );
+    } catch (e) {
+      _rxPlayerState.value = HeHeVideoPlayerState.error(
+        error: e.toString(),
+      );
+    }
+  }
+
+  Future<void> initializeVideoWithLocal(
+    String videoId,
+    File file,
+    String thumbnailUrl,
+  ) async {
+    _rxPlayerState.value = HeHeVideoPlayerState.initialWithLocal(
+      videoId: videoId,
+      file: file,
+      thumbnailUrl: thumbnailUrl,
+    );
+    try {
+      videoPlayerController = VideoPlayerController.file(file);
       await videoPlayerController.initialize();
 
       _rxPlayerState.value = HeHeVideoPlayerState.initialized(

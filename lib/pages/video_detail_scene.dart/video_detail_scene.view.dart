@@ -10,6 +10,7 @@ class _VideoDetailSceneStateWidgetBuilder
           title: Text('Video Player'),
         ),
         body: HeheVideoPlayer(
+          videoId: state._heheVideo.id,
           videoUrl: state._heheVideo.videoUrl,
           thumbnailUrl: state._heheVideo.imageUrl,
         ),

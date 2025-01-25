@@ -19,7 +19,11 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -31,7 +35,10 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -43,7 +50,10 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -56,7 +66,10 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -69,7 +82,10 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -81,7 +97,10 @@ mixin _$HeHeVideoPlayerState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -168,7 +187,11 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -183,7 +206,10 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -198,7 +224,10 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -217,7 +246,10 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -233,7 +265,10 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -248,7 +283,10 @@ class _$HeHeVideoPlayerStateIdleImpl extends HeHeVideoPlayerStateIdle
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -270,23 +308,23 @@ abstract class HeHeVideoPlayerStateIdle extends HeHeVideoPlayerState {
 }
 
 /// @nodoc
-abstract class _$$HeHeVideoPlayerStateInitialImplCopyWith<$Res> {
-  factory _$$HeHeVideoPlayerStateInitialImplCopyWith(
-          _$HeHeVideoPlayerStateInitialImpl value,
-          $Res Function(_$HeHeVideoPlayerStateInitialImpl) then) =
-      __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>;
+abstract class _$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWith(
+          _$HeHeVideoPlayerStateInitialWithNetworkImpl value,
+          $Res Function(_$HeHeVideoPlayerStateInitialWithNetworkImpl) then) =
+      __$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String videoUrl, String thumbnailUrl});
+  $Res call({String videoId, String videoUrl, String thumbnailUrl});
 }
 
 /// @nodoc
-class __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>
+class __$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWithImpl<$Res>
     extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
-        _$HeHeVideoPlayerStateInitialImpl>
-    implements _$$HeHeVideoPlayerStateInitialImplCopyWith<$Res> {
-  __$$HeHeVideoPlayerStateInitialImplCopyWithImpl(
-      _$HeHeVideoPlayerStateInitialImpl _value,
-      $Res Function(_$HeHeVideoPlayerStateInitialImpl) _then)
+        _$HeHeVideoPlayerStateInitialWithNetworkImpl>
+    implements _$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWithImpl(
+      _$HeHeVideoPlayerStateInitialWithNetworkImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateInitialWithNetworkImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of HeHeVideoPlayerState
@@ -294,10 +332,15 @@ class __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? videoId = null,
     Object? videoUrl = null,
     Object? thumbnailUrl = null,
   }) {
-    return _then(_$HeHeVideoPlayerStateInitialImpl(
+    return _then(_$HeHeVideoPlayerStateInitialWithNetworkImpl(
+      videoId: null == videoId
+          ? _value.videoId
+          : videoId // ignore: cast_nullable_to_non_nullable
+              as String,
       videoUrl: null == videoUrl
           ? _value.videoUrl
           : videoUrl // ignore: cast_nullable_to_non_nullable
@@ -312,12 +355,17 @@ class __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
+class _$HeHeVideoPlayerStateInitialWithNetworkImpl
+    extends HeHeVideoPlayerStateInitialWithNetwork
     with DiagnosticableTreeMixin {
-  const _$HeHeVideoPlayerStateInitialImpl(
-      {required this.videoUrl, required this.thumbnailUrl})
+  const _$HeHeVideoPlayerStateInitialWithNetworkImpl(
+      {required this.videoId,
+      required this.videoUrl,
+      required this.thumbnailUrl})
       : super._();
 
+  @override
+  final String videoId;
   @override
   final String videoUrl;
   @override
@@ -325,14 +373,16 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeHeVideoPlayerState.initial(videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl)';
+    return 'HeHeVideoPlayerState.initialWithNetwork(videoId: $videoId, videoUrl: $videoUrl, thumbnailUrl: $thumbnailUrl)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HeHeVideoPlayerState.initial'))
+      ..add(DiagnosticsProperty(
+          'type', 'HeHeVideoPlayerState.initialWithNetwork'))
+      ..add(DiagnosticsProperty('videoId', videoId))
       ..add(DiagnosticsProperty('videoUrl', videoUrl))
       ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl));
   }
@@ -341,7 +391,8 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HeHeVideoPlayerStateInitialImpl &&
+            other is _$HeHeVideoPlayerStateInitialWithNetworkImpl &&
+            (identical(other.videoId, videoId) || other.videoId == videoId) &&
             (identical(other.videoUrl, videoUrl) ||
                 other.videoUrl == videoUrl) &&
             (identical(other.thumbnailUrl, thumbnailUrl) ||
@@ -349,22 +400,28 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, videoUrl, thumbnailUrl);
+  int get hashCode => Object.hash(runtimeType, videoId, videoUrl, thumbnailUrl);
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HeHeVideoPlayerStateInitialImplCopyWith<_$HeHeVideoPlayerStateInitialImpl>
-      get copyWith => __$$HeHeVideoPlayerStateInitialImplCopyWithImpl<
-          _$HeHeVideoPlayerStateInitialImpl>(this, _$identity);
+  _$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWith<
+          _$HeHeVideoPlayerStateInitialWithNetworkImpl>
+      get copyWith =>
+          __$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWithImpl<
+              _$HeHeVideoPlayerStateInitialWithNetworkImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -372,14 +429,17 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     required TResult Function() completed,
     required TResult Function(String? error) error,
   }) {
-    return initial(videoUrl, thumbnailUrl);
+    return initialWithNetwork(videoId, videoUrl, thumbnailUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -387,14 +447,17 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) {
-    return initial?.call(videoUrl, thumbnailUrl);
+    return initialWithNetwork?.call(videoId, videoUrl, thumbnailUrl);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -403,8 +466,8 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(videoUrl, thumbnailUrl);
+    if (initialWithNetwork != null) {
+      return initialWithNetwork(videoId, videoUrl, thumbnailUrl);
     }
     return orElse();
   }
@@ -413,7 +476,10 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -422,14 +488,17 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
     required TResult Function(HeHeVideoPlayerStateError value) error,
   }) {
-    return initial(this);
+    return initialWithNetwork(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -437,14 +506,17 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
     TResult? Function(HeHeVideoPlayerStateError value)? error,
   }) {
-    return initial?.call(this);
+    return initialWithNetwork?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -453,26 +525,272 @@ class _$HeHeVideoPlayerStateInitialImpl extends HeHeVideoPlayerStateInitial
     TResult Function(HeHeVideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (initialWithNetwork != null) {
+      return initialWithNetwork(this);
     }
     return orElse();
   }
 }
 
-abstract class HeHeVideoPlayerStateInitial extends HeHeVideoPlayerState {
-  const factory HeHeVideoPlayerStateInitial(
-      {required final String videoUrl,
-      required final String thumbnailUrl}) = _$HeHeVideoPlayerStateInitialImpl;
-  const HeHeVideoPlayerStateInitial._() : super._();
+abstract class HeHeVideoPlayerStateInitialWithNetwork
+    extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateInitialWithNetwork(
+          {required final String videoId,
+          required final String videoUrl,
+          required final String thumbnailUrl}) =
+      _$HeHeVideoPlayerStateInitialWithNetworkImpl;
+  const HeHeVideoPlayerStateInitialWithNetwork._() : super._();
 
+  String get videoId;
   String get videoUrl;
   String get thumbnailUrl;
 
   /// Create a copy of HeHeVideoPlayerState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HeHeVideoPlayerStateInitialImplCopyWith<_$HeHeVideoPlayerStateInitialImpl>
+  _$$HeHeVideoPlayerStateInitialWithNetworkImplCopyWith<
+          _$HeHeVideoPlayerStateInitialWithNetworkImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$HeHeVideoPlayerStateInitialWithLocalImplCopyWith<$Res> {
+  factory _$$HeHeVideoPlayerStateInitialWithLocalImplCopyWith(
+          _$HeHeVideoPlayerStateInitialWithLocalImpl value,
+          $Res Function(_$HeHeVideoPlayerStateInitialWithLocalImpl) then) =
+      __$$HeHeVideoPlayerStateInitialWithLocalImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String videoId, File file, String thumbnailUrl});
+}
+
+/// @nodoc
+class __$$HeHeVideoPlayerStateInitialWithLocalImplCopyWithImpl<$Res>
+    extends _$HeHeVideoPlayerStateCopyWithImpl<$Res,
+        _$HeHeVideoPlayerStateInitialWithLocalImpl>
+    implements _$$HeHeVideoPlayerStateInitialWithLocalImplCopyWith<$Res> {
+  __$$HeHeVideoPlayerStateInitialWithLocalImplCopyWithImpl(
+      _$HeHeVideoPlayerStateInitialWithLocalImpl _value,
+      $Res Function(_$HeHeVideoPlayerStateInitialWithLocalImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of HeHeVideoPlayerState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? videoId = null,
+    Object? file = null,
+    Object? thumbnailUrl = null,
+  }) {
+    return _then(_$HeHeVideoPlayerStateInitialWithLocalImpl(
+      videoId: null == videoId
+          ? _value.videoId
+          : videoId // ignore: cast_nullable_to_non_nullable
+              as String,
+      file: null == file
+          ? _value.file
+          : file // ignore: cast_nullable_to_non_nullable
+              as File,
+      thumbnailUrl: null == thumbnailUrl
+          ? _value.thumbnailUrl
+          : thumbnailUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$HeHeVideoPlayerStateInitialWithLocalImpl
+    extends HeHeVideoPlayerStateInitialWithLocal with DiagnosticableTreeMixin {
+  const _$HeHeVideoPlayerStateInitialWithLocalImpl(
+      {required this.videoId, required this.file, required this.thumbnailUrl})
+      : super._();
+
+  @override
+  final String videoId;
+  @override
+  final File file;
+  @override
+  final String thumbnailUrl;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HeHeVideoPlayerState.initialWithLocal(videoId: $videoId, file: $file, thumbnailUrl: $thumbnailUrl)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'HeHeVideoPlayerState.initialWithLocal'))
+      ..add(DiagnosticsProperty('videoId', videoId))
+      ..add(DiagnosticsProperty('file', file))
+      ..add(DiagnosticsProperty('thumbnailUrl', thumbnailUrl));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$HeHeVideoPlayerStateInitialWithLocalImpl &&
+            (identical(other.videoId, videoId) || other.videoId == videoId) &&
+            (identical(other.file, file) || other.file == file) &&
+            (identical(other.thumbnailUrl, thumbnailUrl) ||
+                other.thumbnailUrl == thumbnailUrl));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, videoId, file, thumbnailUrl);
+
+  /// Create a copy of HeHeVideoPlayerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$HeHeVideoPlayerStateInitialWithLocalImplCopyWith<
+          _$HeHeVideoPlayerStateInitialWithLocalImpl>
+      get copyWith => __$$HeHeVideoPlayerStateInitialWithLocalImplCopyWithImpl<
+          _$HeHeVideoPlayerStateInitialWithLocalImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
+    required TResult Function(Duration length) initialized,
+    required TResult Function(Duration currentPosition) playing,
+    required TResult Function(Duration currentPosition) paused,
+    required TResult Function() buffering,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
+  }) {
+    return initialWithLocal(videoId, file, thumbnailUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
+    TResult? Function(Duration length)? initialized,
+    TResult? Function(Duration currentPosition)? playing,
+    TResult? Function(Duration currentPosition)? paused,
+    TResult? Function()? buffering,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
+  }) {
+    return initialWithLocal?.call(videoId, file, thumbnailUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
+    TResult Function(Duration length)? initialized,
+    TResult Function(Duration currentPosition)? playing,
+    TResult Function(Duration currentPosition)? paused,
+    TResult Function()? buffering,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
+    required TResult orElse(),
+  }) {
+    if (initialWithLocal != null) {
+      return initialWithLocal(videoId, file, thumbnailUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(HeHeVideoPlayerStateIdle value) idle,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
+    required TResult Function(HeHeVideoPlayerStateInitialized value)
+        initialized,
+    required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
+    required TResult Function(HeHeVideoPlayerStatePaused value) paused,
+    required TResult Function(HeHeVideoPlayerStateBuffering value) buffering,
+    required TResult Function(HeHeVideoPlayerStateCompleted value) completed,
+    required TResult Function(HeHeVideoPlayerStateError value) error,
+  }) {
+    return initialWithLocal(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
+    TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult? Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult? Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult? Function(HeHeVideoPlayerStateError value)? error,
+  }) {
+    return initialWithLocal?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(HeHeVideoPlayerStateIdle value)? idle,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
+    TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
+    TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
+    TResult Function(HeHeVideoPlayerStatePaused value)? paused,
+    TResult Function(HeHeVideoPlayerStateBuffering value)? buffering,
+    TResult Function(HeHeVideoPlayerStateCompleted value)? completed,
+    TResult Function(HeHeVideoPlayerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initialWithLocal != null) {
+      return initialWithLocal(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class HeHeVideoPlayerStateInitialWithLocal
+    extends HeHeVideoPlayerState {
+  const factory HeHeVideoPlayerStateInitialWithLocal(
+          {required final String videoId,
+          required final File file,
+          required final String thumbnailUrl}) =
+      _$HeHeVideoPlayerStateInitialWithLocalImpl;
+  const HeHeVideoPlayerStateInitialWithLocal._() : super._();
+
+  String get videoId;
+  File get file;
+  String get thumbnailUrl;
+
+  /// Create a copy of HeHeVideoPlayerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$HeHeVideoPlayerStateInitialWithLocalImplCopyWith<
+          _$HeHeVideoPlayerStateInitialWithLocalImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -560,7 +878,11 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -575,7 +897,10 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -590,7 +915,10 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -609,7 +937,10 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -625,7 +956,10 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -640,7 +974,10 @@ class _$HeHeVideoPlayerStateInitializedImpl
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -755,7 +1092,11 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -770,7 +1111,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -785,7 +1129,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -804,7 +1151,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -820,7 +1170,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -835,7 +1188,10 @@ class _$HeHeVideoPlayerStatePlayingImpl extends HeHeVideoPlayerStatePlaying
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -950,7 +1306,11 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -965,7 +1325,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -980,7 +1343,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -999,7 +1365,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -1015,7 +1384,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1030,7 +1402,10 @@ class _$HeHeVideoPlayerStatePausedImpl extends HeHeVideoPlayerStatePaused
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1115,7 +1490,11 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -1130,7 +1509,10 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -1145,7 +1527,10 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -1164,7 +1549,10 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -1180,7 +1568,10 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1195,7 +1586,10 @@ class _$HeHeVideoPlayerStateBufferingImpl extends HeHeVideoPlayerStateBuffering
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1271,7 +1665,11 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -1286,7 +1684,10 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -1301,7 +1702,10 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -1320,7 +1724,10 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -1336,7 +1743,10 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1351,7 +1761,10 @@ class _$HeHeVideoPlayerStateCompletedImpl extends HeHeVideoPlayerStateCompleted
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1455,7 +1868,11 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() idle,
-    required TResult Function(String videoUrl, String thumbnailUrl) initial,
+    required TResult Function(
+            String videoId, String videoUrl, String thumbnailUrl)
+        initialWithNetwork,
+    required TResult Function(String videoId, File file, String thumbnailUrl)
+        initialWithLocal,
     required TResult Function(Duration length) initialized,
     required TResult Function(Duration currentPosition) playing,
     required TResult Function(Duration currentPosition) paused,
@@ -1470,7 +1887,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? idle,
-    TResult? Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult? Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult? Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult? Function(Duration length)? initialized,
     TResult? Function(Duration currentPosition)? playing,
     TResult? Function(Duration currentPosition)? paused,
@@ -1485,7 +1905,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? idle,
-    TResult Function(String videoUrl, String thumbnailUrl)? initial,
+    TResult Function(String videoId, String videoUrl, String thumbnailUrl)?
+        initialWithNetwork,
+    TResult Function(String videoId, File file, String thumbnailUrl)?
+        initialWithLocal,
     TResult Function(Duration length)? initialized,
     TResult Function(Duration currentPosition)? playing,
     TResult Function(Duration currentPosition)? paused,
@@ -1504,7 +1927,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(HeHeVideoPlayerStateIdle value) idle,
-    required TResult Function(HeHeVideoPlayerStateInitial value) initial,
+    required TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)
+        initialWithNetwork,
+    required TResult Function(HeHeVideoPlayerStateInitialWithLocal value)
+        initialWithLocal,
     required TResult Function(HeHeVideoPlayerStateInitialized value)
         initialized,
     required TResult Function(HeHeVideoPlayerStatePlaying value) playing,
@@ -1520,7 +1946,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult? Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult? Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult? Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult? Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult? Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult? Function(HeHeVideoPlayerStatePaused value)? paused,
@@ -1535,7 +1964,10 @@ class _$HeHeVideoPlayerStateErrorImpl extends HeHeVideoPlayerStateError
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(HeHeVideoPlayerStateIdle value)? idle,
-    TResult Function(HeHeVideoPlayerStateInitial value)? initial,
+    TResult Function(HeHeVideoPlayerStateInitialWithNetwork value)?
+        initialWithNetwork,
+    TResult Function(HeHeVideoPlayerStateInitialWithLocal value)?
+        initialWithLocal,
     TResult Function(HeHeVideoPlayerStateInitialized value)? initialized,
     TResult Function(HeHeVideoPlayerStatePlaying value)? playing,
     TResult Function(HeHeVideoPlayerStatePaused value)? paused,

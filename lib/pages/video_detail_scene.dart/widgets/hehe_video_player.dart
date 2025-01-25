@@ -1,6 +1,10 @@
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart' hide Trans;
+import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 
 import '../controllers/hehe_video_player_controller.dart';
@@ -8,10 +12,12 @@ import '../controllers/hehe_video_player_state.dart';
 
 class HeheVideoPlayer extends StatefulWidget {
   const HeheVideoPlayer({
+    required this.videoId,
     required this.videoUrl,
     required this.thumbnailUrl,
     super.key,
   });
+  final String videoId;
   final String videoUrl;
   final String thumbnailUrl;
   @override
@@ -25,10 +31,29 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
   @override
   void initState() {
     super.initState();
-    _initializeVideoPlayerFuture = _onlineVideoPlayController.initializeVideo(
-      widget.videoUrl,
-      widget.thumbnailUrl,
-    );
+    _initializeVideoPlayerFuture = _setupVideo();
+    // _initializeVideoPlayerFuture = _onlineVideoPlayController.initializeVideo(
+    //   widget.videoUrl,
+    //   widget.thumbnailUrl,
+    // );
+  }
+
+  Future<void> _setupVideo() async {
+    final localPath = await _getLocalFilePath();
+    if (File(localPath).existsSync()) {
+      _onlineVideoPlayController.initializeVideoWithLocal(
+        widget.videoId,
+        File(localPath),
+        widget.thumbnailUrl,
+      );
+    } else {
+      _downloadFile(widget.videoUrl, localPath);
+      _onlineVideoPlayController.initializeVideoWithNetwork(
+        widget.videoId,
+        widget.videoUrl,
+        widget.thumbnailUrl,
+      );
+    }
   }
 
   @override
@@ -75,7 +100,9 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
                   ),
                 ],
                 if (_onlineVideoPlayController.playerState
-                        is HeHeVideoPlayerStateInitial ||
+                        is HeHeVideoPlayerStateInitialWithLocal ||
+                    _onlineVideoPlayController.playerState
+                        is HeHeVideoPlayerStateInitialWithNetwork ||
                     _onlineVideoPlayController.playerState
                         is HeHeVideoPlayerStateBuffering ||
                     _onlineVideoPlayController.playerState
@@ -182,4 +209,34 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
           ),
         ),
       );
+  Future<String> _getLocalFilePath() async {
+    final directory = (Platform.isAndroid)
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
+    if (directory != null) {
+      final filePath = '${directory.path}/${widget.videoId}.mp4';
+      return filePath;
+    } else {
+      return '';
+    }
+  }
+
+  Future<void> _downloadFile(String url, String savePath) async {
+    final dio = Dio();
+    try {
+      await dio.download(
+        url,
+        savePath,
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            debugPrint(
+              'Download Progress: ${(received / total * 100).toStringAsFixed(0)}%',
+            );
+          }
+        },
+      );
+    } catch (e) {
+      debugPrint('Download Error: $e');
+    }
+  }
 }
