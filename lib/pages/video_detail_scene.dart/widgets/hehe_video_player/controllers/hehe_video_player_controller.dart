@@ -1,8 +1,10 @@
 import 'dart:io';
 
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_state.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/widgets/hehe_video_player/controllers/hehe_video_player_state.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Trans;
+import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 
 class HeHeVideoPlayerController extends GetxController {
@@ -110,6 +112,58 @@ class HeHeVideoPlayerController extends GetxController {
       Duration.zero,
     );
     _rxPlayerState.value = HeHeVideoPlayerState.idle();
+  }
+
+  Future<void> setupVideo(
+    String videoId,
+    String videoUrl,
+    String thumbnailUrl,
+  ) async {
+    final localPath = await _getLocalFilePath(videoId);
+    if (File(localPath).existsSync()) {
+      initializeVideoWithLocal(
+        videoId,
+        File(localPath),
+        thumbnailUrl,
+      );
+    } else {
+      _downloadFile(videoUrl, localPath);
+      initializeVideoWithNetwork(
+        videoId,
+        videoUrl,
+        thumbnailUrl,
+      );
+    }
+  }
+
+  Future<void> _downloadFile(String url, String savePath) async {
+    final dio = Dio();
+    try {
+      await dio.download(
+        url,
+        savePath,
+        onReceiveProgress: (received, total) {
+          if (total != -1) {
+            debugPrint(
+              'Download Progress: ${(received / total * 100).toStringAsFixed(0)}%',
+            );
+          }
+        },
+      );
+    } catch (e) {
+      debugPrint('Download Error: $e');
+    }
+  }
+
+  Future<String> _getLocalFilePath(String videoId) async {
+    final directory = (Platform.isAndroid)
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
+    if (directory != null) {
+      return '${directory.path}/$videoId.mp4';
+    } else {
+      return '';
+    }
   }
 
   @override

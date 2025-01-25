@@ -1,5 +1,5 @@
 import 'package:cosmoplay/flavors.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/widgets/hehe_video_player/controllers/hehe_video_player_controller.dart';
 
 import 'package:get/get.dart';
 
