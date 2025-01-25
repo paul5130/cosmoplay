@@ -31,11 +31,8 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
     _initializeVideoPlayerFuture = _setupVideo();
-    // _initializeVideoPlayerFuture = _onlineVideoPlayController.initializeVideo(
-    //   widget.videoUrl,
-    //   widget.thumbnailUrl,
-    // );
   }
 
   Future<void> _setupVideo() async {
@@ -58,6 +55,7 @@ class _HeheVideoPlayerState extends State<HeheVideoPlayer>
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     _onlineVideoPlayController.dispose();
     super.dispose();
   }
