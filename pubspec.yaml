@@ -42,7 +42,6 @@ flutter_gen:
     enabled: true
 flutter:
   assets:
-    - assets/data/
     - assets/images/
   uses-material-design: true
 flavorizr:

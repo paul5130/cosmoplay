@@ -1,39 +1,69 @@
 import 'dart:io';
 
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Trans;
 import 'package:video_player/video_player.dart';
+
+import '../controllers/video_player_state.dart';
 
 class VideoPlayerService {
   VideoPlayerController? _controller;
 
   VideoPlayerController? get controller => _controller;
+  final _rxVideoPlayerState = Rx<VideoPlayerState>(VideoPlayerState.idle());
+  VideoPlayerState get videoPlayerState => _rxVideoPlayerState.value;
 
-  final _rxIsInitialized = RxBool(false);
+  final _rxPosition = Rx<Duration>(Duration.zero);
+  Duration get position => _rxPosition.value;
 
-  bool get isInitialized => _rxIsInitialized.value;
-  set isInitialized(bool value) => _rxIsInitialized.value = value;
-  Duration get position => _controller?.value.position ?? Duration.zero;
-  Duration get duration => _controller?.value.duration ?? Duration.zero;
+  final _rxDuration = Rx<Duration>(Duration.zero);
+  Duration get duration => _rxDuration.value;
+
+  void initialize(String thumbnailUrl) {
+    _rxVideoPlayerState.value = VideoPlayerState.initializing(
+      thumbnailUrl: thumbnailUrl,
+    );
+  }
 
   Future<void> initializeNetwork(Uri url) async {
     _controller = VideoPlayerController.networkUrl(url);
-    await _controller!.initialize();
-    if (_controller!.value.isInitialized) {
-      isInitialized = true;
+    try {
+      await _controller!.initialize();
+      _controller!.addListener(_videoPlayerListener);
+      _rxDuration.value = _controller!.value.duration;
+      _rxVideoPlayerState.value = VideoPlayerState.initialized();
+    } catch (e) {
+      _rxVideoPlayerState.value = VideoPlayerState.error(
+        error: e.toString(),
+      );
     }
   }
 
   Future<void> initializeLocal(File file) async {
     _controller = VideoPlayerController.file(file);
-    await _controller!.initialize();
-    if (_controller!.value.isInitialized) {
-      isInitialized = true;
+    try {
+      await _controller!.initialize();
+      _controller!.addListener(_videoPlayerListener);
+      _rxDuration.value = _controller!.value.duration;
+      _rxVideoPlayerState.value = VideoPlayerState.initialized();
+    } catch (e) {
+      _rxVideoPlayerState.value = VideoPlayerState.error(
+        error: e.toString(),
+      );
     }
   }
 
-  void play() => _controller?.play();
+  void _videoPlayerListener() {
+    if (_controller == null) return;
+    _rxPosition.value = _controller!.value.position;
+  }
 
-  void pause() => _controller?.pause();
+  void play() {
+    _controller?.play();
+  }
+
+  void pause() {
+    _controller?.pause();
+  }
 
   void dispose() {
     _controller?.dispose();

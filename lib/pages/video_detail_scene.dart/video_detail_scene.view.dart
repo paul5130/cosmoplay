@@ -7,7 +7,7 @@ class _VideoDetailSceneStateWidgetBuilder
   @override
   Widget sceneWidget(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Video Detail'),
+          title: Text(state._heheVideo.name),
         ),
         body: Container(
           color: Colors.black,
@@ -17,120 +17,16 @@ class _VideoDetailSceneStateWidgetBuilder
               context,
               snapshot,
             ) =>
-                Obx(() => state._onlineVideoPlayController.videoService
-                            .isInitialized
-                        ? Align(
-                            alignment: Alignment.center,
-                            child: Stack(
-                              children: [
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      AspectRatio(
-                                        aspectRatio: state
-                                            ._onlineVideoPlayController
-                                            .videoService
-                                            .controller!
-                                            .value
-                                            .aspectRatio,
-                                        child: VideoPlayer(
-                                          state._onlineVideoPlayController
-                                              .videoService.controller!,
-                                        ),
-                                      ),
-                                      Slider(
-                                        value: state
-                                            ._onlineVideoPlayController
-                                            .videoService
-                                            .controller!
-                                            .value
-                                            .position
-                                            .inMilliseconds
-                                            .toDouble(),
-                                        max: state
-                                            ._onlineVideoPlayController
-                                            .videoService
-                                            .controller!
-                                            .value
-                                            .duration
-                                            .inMilliseconds
-                                            .toDouble(),
-                                        onChanged: (value) {
-                                          final seekPosition = Duration(
-                                              milliseconds: value.toInt());
-                                          state._onlineVideoPlayController
-                                              .videoService.controller!
-                                              .seekTo(seekPosition);
-                                        },
-                                        activeColor: Colors.white,
-                                        inactiveColor: Colors.grey,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: AnimatedOpacity(
-                                    opacity: state._onlineVideoPlayController
-                                            .isPlaying.value
-                                        ? 0.2
-                                        : 1.0,
-                                    duration: const Duration(milliseconds: 300),
-                                    child: IconButton(
-                                      iconSize: 64,
-                                      icon: Icon(
-                                        state._onlineVideoPlayController
-                                                .isPlaying.value
-                                            ? Icons.pause
-                                            : Icons.play_arrow,
-                                        color: Colors.white,
-                                      ),
-                                      onPressed: () {
-                                        if (state._onlineVideoPlayController
-                                            .isPlaying.value) {
-                                          state._onlineVideoPlayController
-                                              .pause();
-                                        } else {
-                                          state._onlineVideoPlayController
-                                              .resume();
-                                        }
-                                      },
-                                    ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        : Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Align(
-                                alignment: Alignment.center,
-                                child: Image.network(
-                                  state._heheVideo.imageUrl,
-                                  fit: BoxFit.contain,
-                                  width: double.infinity,
-                                  height: double.infinity,
-                                ),
-                              ),
-                              Center(
-                                child: CircularProgressIndicator(),
-                              ),
-                            ],
-                          )
-                    //  Stack(
-                    //   alignment: Alignment.center,
-                    //   children: [
-
-                    //     if (state
-                    //         ._onlineVideoPlayController.videoService.isInitialized)
-
-                    //     // ],
-                    //   ],
-                    // ),
-                    ),
+                switch (state
+                    ._videoPlayController.videoPlayerService.videoPlayerState) {
+              final VideoPlayerStateIdle _ => Container(),
+              final VideoPlayerStateInitializing stateIntializing =>
+                VideoStateIntializingUI(state: stateIntializing),
+              final VideoPlayerStateInitialized _ =>
+                VideoStateInitializedUI(controller: state._videoPlayController),
+              final VideoPlayerStateError stateError =>
+                VideoStateErrorUI(errorState: stateError),
+            },
           ),
         ),
       );

@@ -1,11 +1,12 @@
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_download_service.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/widgets/video_state_ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/base_state.dart';
 import 'package:get/get.dart' hide Trans;
-import 'package:video_player/video_player.dart';
 
 import '../../network/model/hehe_video.dart';
 import 'controllers/hehe_video_player_controller.dart';
+import 'controllers/video_player_state.dart';
 part 'video_detail_scene_binding.dart';
 part 'video_detail_scene.view.dart';
 
@@ -19,12 +20,13 @@ class VideoDetailScene extends StatefulWidget {
 class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene>
     with TickerProviderStateMixin, WidgetsBindingObserver {
   final _heheVideo = Get.arguments as HeHeVideo;
-  final _onlineVideoPlayController = Get.find<HeHeVideoPlayerController>();
+  final _videoPlayController = Get.find<HeHeVideoPlayerController>();
   late Future<void> _initializeVideoPlayerFuture;
   @override
   void initState() {
     super.initState();
-    _initializeVideoPlayerFuture = _onlineVideoPlayController.setupVideo(
+    _initializeVideoPlayerFuture = _videoPlayController.setupVideo(
+      _heheVideo.imageUrl,
       _heheVideo.id,
       _heheVideo.videoUrl,
     );
@@ -33,7 +35,7 @@ class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene>
 
   @override
   void dispose() {
-    _onlineVideoPlayController.dispose();
+    _videoPlayController.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -43,11 +45,11 @@ class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene>
     // super.didChangeAppLifecycleState(state);
     switch (state) {
       case AppLifecycleState.resumed:
-        _onlineVideoPlayController.resume();
+        _videoPlayController.resume();
         break;
       case AppLifecycleState.inactive:
       case AppLifecycleState.hidden:
-        _onlineVideoPlayController.pause();
+        _videoPlayController.pause();
         break;
       default:
         break;
