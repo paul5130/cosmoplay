@@ -5,6 +5,7 @@ environment:
   sdk: '^3.6.0'
 description: A new Flutter project.
 dependencies:
+  background_downloader: ^8.9.4
   cached_network_image: '^3.4.1'
   copy_with_extension: '^6.0.0'
   cupertino_icons: '^1.0.8'

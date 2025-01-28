@@ -20,7 +20,7 @@ mixin _$GetVideoListState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HeHeVideo> videos) success,
+    required TResult Function(List<HeHeVideo> videoList) success,
     required TResult Function(String? error) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -28,7 +28,7 @@ mixin _$GetVideoListState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HeHeVideo> videos)? success,
+    TResult? Function(List<HeHeVideo> videoList)? success,
     TResult? Function(String? error)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$GetVideoListState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HeHeVideo> videos)? success,
+    TResult Function(List<HeHeVideo> videoList)? success,
     TResult Function(String? error)? failure,
     required TResult orElse(),
   }) =>
@@ -136,7 +136,7 @@ class _$GetVideoListStateInitialImpl extends GetVideoListStateInitial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HeHeVideo> videos) success,
+    required TResult Function(List<HeHeVideo> videoList) success,
     required TResult Function(String? error) failure,
   }) {
     return initial();
@@ -147,7 +147,7 @@ class _$GetVideoListStateInitialImpl extends GetVideoListStateInitial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HeHeVideo> videos)? success,
+    TResult? Function(List<HeHeVideo> videoList)? success,
     TResult? Function(String? error)? failure,
   }) {
     return initial?.call();
@@ -158,7 +158,7 @@ class _$GetVideoListStateInitialImpl extends GetVideoListStateInitial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HeHeVideo> videos)? success,
+    TResult Function(List<HeHeVideo> videoList)? success,
     TResult Function(String? error)? failure,
     required TResult orElse(),
   }) {
@@ -258,7 +258,7 @@ class _$GetVideoListStateLoadingImpl extends GetVideoListStateLoading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HeHeVideo> videos) success,
+    required TResult Function(List<HeHeVideo> videoList) success,
     required TResult Function(String? error) failure,
   }) {
     return loading();
@@ -269,7 +269,7 @@ class _$GetVideoListStateLoadingImpl extends GetVideoListStateLoading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HeHeVideo> videos)? success,
+    TResult? Function(List<HeHeVideo> videoList)? success,
     TResult? Function(String? error)? failure,
   }) {
     return loading?.call();
@@ -280,7 +280,7 @@ class _$GetVideoListStateLoadingImpl extends GetVideoListStateLoading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HeHeVideo> videos)? success,
+    TResult Function(List<HeHeVideo> videoList)? success,
     TResult Function(String? error)? failure,
     required TResult orElse(),
   }) {
@@ -340,7 +340,7 @@ abstract class _$$GetVideoListStateSuccessImplCopyWith<$Res> {
           $Res Function(_$GetVideoListStateSuccessImpl) then) =
       __$$GetVideoListStateSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<HeHeVideo> videos});
+  $Res call({List<HeHeVideo> videoList});
 }
 
 /// @nodoc
@@ -358,12 +358,12 @@ class __$$GetVideoListStateSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? videos = null,
+    Object? videoList = null,
   }) {
     return _then(_$GetVideoListStateSuccessImpl(
-      videos: null == videos
-          ? _value._videos
-          : videos // ignore: cast_nullable_to_non_nullable
+      videoList: null == videoList
+          ? _value._videoList
+          : videoList // ignore: cast_nullable_to_non_nullable
               as List<HeHeVideo>,
     ));
   }
@@ -372,21 +372,22 @@ class __$$GetVideoListStateSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
-  const _$GetVideoListStateSuccessImpl({required final List<HeHeVideo> videos})
-      : _videos = videos,
+  const _$GetVideoListStateSuccessImpl(
+      {required final List<HeHeVideo> videoList})
+      : _videoList = videoList,
         super._();
 
-  final List<HeHeVideo> _videos;
+  final List<HeHeVideo> _videoList;
   @override
-  List<HeHeVideo> get videos {
-    if (_videos is EqualUnmodifiableListView) return _videos;
+  List<HeHeVideo> get videoList {
+    if (_videoList is EqualUnmodifiableListView) return _videoList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_videos);
+    return EqualUnmodifiableListView(_videoList);
   }
 
   @override
   String toString() {
-    return 'GetVideoListState.success(videos: $videos)';
+    return 'GetVideoListState.success(videoList: $videoList)';
   }
 
   @override
@@ -394,12 +395,13 @@ class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GetVideoListStateSuccessImpl &&
-            const DeepCollectionEquality().equals(other._videos, _videos));
+            const DeepCollectionEquality()
+                .equals(other._videoList, _videoList));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_videos));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_videoList));
 
   /// Create a copy of GetVideoListState
   /// with the given fields replaced by the non-null parameter values.
@@ -415,10 +417,10 @@ class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HeHeVideo> videos) success,
+    required TResult Function(List<HeHeVideo> videoList) success,
     required TResult Function(String? error) failure,
   }) {
-    return success(videos);
+    return success(videoList);
   }
 
   @override
@@ -426,10 +428,10 @@ class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HeHeVideo> videos)? success,
+    TResult? Function(List<HeHeVideo> videoList)? success,
     TResult? Function(String? error)? failure,
   }) {
-    return success?.call(videos);
+    return success?.call(videoList);
   }
 
   @override
@@ -437,12 +439,12 @@ class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HeHeVideo> videos)? success,
+    TResult Function(List<HeHeVideo> videoList)? success,
     TResult Function(String? error)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(videos);
+      return success(videoList);
     }
     return orElse();
   }
@@ -487,10 +489,11 @@ class _$GetVideoListStateSuccessImpl extends GetVideoListStateSuccess {
 
 abstract class GetVideoListStateSuccess extends GetVideoListState {
   const factory GetVideoListStateSuccess(
-      {required final List<HeHeVideo> videos}) = _$GetVideoListStateSuccessImpl;
+          {required final List<HeHeVideo> videoList}) =
+      _$GetVideoListStateSuccessImpl;
   const GetVideoListStateSuccess._() : super._();
 
-  List<HeHeVideo> get videos;
+  List<HeHeVideo> get videoList;
 
   /// Create a copy of GetVideoListState
   /// with the given fields replaced by the non-null parameter values.
@@ -573,7 +576,7 @@ class _$GetVideoListStateFailureImpl extends GetVideoListStateFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(List<HeHeVideo> videos) success,
+    required TResult Function(List<HeHeVideo> videoList) success,
     required TResult Function(String? error) failure,
   }) {
     return failure(error);
@@ -584,7 +587,7 @@ class _$GetVideoListStateFailureImpl extends GetVideoListStateFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(List<HeHeVideo> videos)? success,
+    TResult? Function(List<HeHeVideo> videoList)? success,
     TResult? Function(String? error)? failure,
   }) {
     return failure?.call(error);
@@ -595,7 +598,7 @@ class _$GetVideoListStateFailureImpl extends GetVideoListStateFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(List<HeHeVideo> videos)? success,
+    TResult Function(List<HeHeVideo> videoList)? success,
     TResult Function(String? error)? failure,
     required TResult orElse(),
   }) {

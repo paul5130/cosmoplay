@@ -8,7 +8,7 @@ sealed class GetVideoListState with _$GetVideoListState {
   const factory GetVideoListState.initial() = GetVideoListStateInitial;
   const factory GetVideoListState.loading() = GetVideoListStateLoading;
   const factory GetVideoListState.success({
-    required List<HeHeVideo> videos,
+    required List<HeHeVideo> videoList,
   }) = GetVideoListStateSuccess;
   const factory GetVideoListState.failure({
     String? error,

@@ -6,3 +6,4 @@ dart run flutter_native_splash:create
 flutter build ios --target=lib/main_dev.dart --flavor=dev
 flutter build ipa --release --flavor dev -t lib/main_dev.dart --no-codesign
 xcodebuild -exportArchive -archivePath build/ios/archive/Runner.xcarchive -exportPath build/ios -exportOptionsPlist .signing_config/dev/export_options.plist
+flutter build apk --flavor prod -t lib/main_prod.dart

@@ -1,12 +1,11 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart' hide Trans;
-import 'package:path_provider/path_provider.dart';
 
 import 'get_video_list_state.dart';
 
@@ -21,15 +20,15 @@ class GetVideoListService extends GetxService {
     _rxState.value = const GetVideoListState.loading();
     try {
       final String response = await _loadFromUrl();
-      await _saveToLocal(response); // 将成功的网络数据保存到本地
-      final videos = _parseVideos(response);
-      _setSuccessState(videos);
+      // await _saveToLocal(response);
+      final videoList = _parseVideos(response);
+      _setSuccessState(videoList);
     } catch (e) {
       debugPrint('loadVideos error: $e');
       try {
-        final String response = await _loadFromLocal();
-        final videos = _parseVideos(response);
-        _setSuccessState(videos);
+        final String response = await _getLocalFile();
+        final videoList = _parseVideos(response);
+        _setSuccessState(videoList);
       } catch (loadError) {
         _rxState.value = GetVideoListState.failure(
           error: loadError.toString(),
@@ -42,7 +41,7 @@ class GetVideoListService extends GetxService {
     if (state is! GetVideoListStateSuccess) return;
     if (query.trim().isEmpty) {
       _rxState.value = GetVideoListState.success(
-        videos: allVideos,
+        videoList: allVideos,
       );
     } else {
       final filteredVideos = allVideos
@@ -53,7 +52,7 @@ class GetVideoListService extends GetxService {
           )
           .toList();
       _rxState.value = GetVideoListState.success(
-        videos: filteredVideos,
+        videoList: filteredVideos,
       );
     }
   }
@@ -63,33 +62,35 @@ class GetVideoListService extends GetxService {
     return jsonData.map((data) => HeHeVideo.fromJson(data)).toList();
   }
 
-  Future<File> _getLocalFile() async {
-    final directory = await getApplicationDocumentsDirectory();
-    return File('${directory.path}/mv_list.json');
+  Future<String> _getLocalFile() async {
+    final String response =
+        await rootBundle.loadString('assets/data/mv_list.json');
+    return response;
   }
 
-  Future<String> _loadFromLocal() async {
-    final file = await _getLocalFile();
-    if (await file.exists()) {
-      return await file.readAsString();
-    } else {
-      throw Exception('Local data file not found.');
-    }
-  }
+  // Future<String> _loadFromLocal() async {
+  //   return await _getLocalFile();
+  // final file = await _getLocalFile();
+  // if (await file.exists()) {
+  //   return await file.readAsString();
+  // } else {
+  //   throw Exception('Local data file not found.');
+  // }
+  // }
 
-  Future<void> _saveToLocal(String data) async {
-    final file = await _getLocalFile();
-    await file.writeAsString(data);
-  }
+  // Future<void> _saveToLocal(String data) async {
+  //   final file = await _getLocalFile();
+  //   await file.writeAsString(data);
+  // }
 
-  void _setSuccessState(List<HeHeVideo> videos) {
-    allVideos = videos;
-    _rxState.value = GetVideoListState.success(videos: videos);
+  void _setSuccessState(List<HeHeVideo> videoList) {
+    allVideos = videoList;
+    _rxState.value = GetVideoListState.success(videoList: videoList);
   }
 
   Future<String> _loadFromUrl() async {
     const String url =
-        'https://raw.githubusercontent.com/paul5130/cosmoplay/main/mv_list.json';
+        'https://drive.usercontent.google.com/download?id=1FgBLIo8QmyVFPz3lmf_b8a-vr2-aTiEc';
     final response = await _dio.get(url);
     if (response.statusCode == 200) {
       return response.data.toString();

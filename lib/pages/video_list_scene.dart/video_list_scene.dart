@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:cosmoplay/app_routes.dart';
 import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/pages/video_list_scene.dart/services/get_video_list_service.dart';
-import 'package:cosmoplay/pages/video_list_scene.dart/widgets/video_cell.dart';
+import 'package:cosmoplay/pages/video_list_scene.dart/widgets/video_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_common/base_state.dart';
 import 'package:get/get.dart' hide Trans;
