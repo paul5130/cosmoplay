@@ -7,18 +7,37 @@ class _VideoDetailSceneStateWidgetBuilder
   @override
   Widget sceneWidget(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text(state._heheVideo.name),
+          title: Obx(
+            () => Text(
+              state._videoPlayController.title,
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                state._videoPlayController.playPrevious();
+                debugPrint('previous');
+              },
+              icon: Icon(
+                Icons.skip_previous,
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                state._videoPlayController.playNext();
+                debugPrint('next');
+              },
+              icon: Icon(
+                Icons.skip_next,
+              ),
+            ),
+          ],
         ),
         body: Container(
           color: Colors.black,
-          child: FutureBuilder(
-            future: state._initializeVideoPlayerFuture,
-            builder: (
-              context,
-              snapshot,
-            ) =>
-                switch (state
-                    ._videoPlayController.videoPlayerService.videoPlayerState) {
+          child: Obx(
+            () => switch (state
+                ._videoPlayController.videoPlayerService.videoPlayerState) {
               final VideoPlayerStateIdle _ => Container(),
               final VideoPlayerStateInitializing stateIntializing =>
                 VideoStateIntializingUI(state: stateIntializing),
@@ -26,6 +45,7 @@ class _VideoDetailSceneStateWidgetBuilder
                 VideoStateInitializedUI(controller: state._videoPlayController),
               final VideoPlayerStateError stateError =>
                 VideoStateErrorUI(errorState: stateError),
+              final VideoPlayerStateCompleted _ => Container(),
             },
           ),
         ),

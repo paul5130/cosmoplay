@@ -14,15 +14,43 @@ class HeHeVideoPlayerController extends GetxController {
   final VideoDownloadService _videoDownloadService =
       Get.find<VideoDownloadService>();
 
+  final RxList<HeHeVideo> _rxVideoList = RxList<HeHeVideo>([]);
+  List<HeHeVideo> get videoList => _rxVideoList;
+
+  final RxString _rxTitle = RxString('');
+  String get title => _rxTitle.value;
+
+  int _currentIndex = 0;
+
+  void setVideoList(List<HeHeVideo> videos) {
+    _rxVideoList.assignAll(videos);
+    _currentIndex = 0;
+  }
+
+  Future<void> playVideoAtIndex(int index) async {
+    if (videoList.isEmpty || index >= videoList.length) return;
+    _currentIndex = index;
+    final video = videoList[index];
+    await setupVideo(video);
+  }
+
   Future<void> setupVideo(
     HeHeVideo heheVideo,
   ) async {
+    videoPlayerService.resetController();
+    _rxTitle.value = heheVideo.name.replaceAll('-星際隕石團隊', '');
     videoPlayerService.initialize(heheVideo.imageUrl);
     Directory? directory = await _getdirectory();
     if (directory != null) {
-      final isLocal = await _isVideoDownloaded(heheVideo.id, directory);
+      final isLocal = await _isVideoDownloaded(
+        heheVideo.id,
+        directory,
+      );
       if (isLocal) {
-        final file = await _getLocalVideo(heheVideo.id, directory);
+        final file = await _getLocalVideo(
+          heheVideo.id,
+          directory,
+        );
         await videoPlayerService.initializeLocal(file);
       } else {
         _startDownload(heheVideo.videoUrl, heheVideo.id);
@@ -79,7 +107,37 @@ class HeHeVideoPlayerController extends GetxController {
 
   void pause() => videoPlayerService.pause();
 
-  void seekTo(Duration position) => videoPlayerService.seekTo(position);
+  void seekTo(
+    Duration position,
+  ) =>
+      videoPlayerService.seekTo(
+        position,
+      );
+
+  void playNext() {
+    if (videoList.isEmpty) return;
+    // videoPlayerService.resetController();
+    _currentIndex = (_currentIndex + 1) % videoList.length;
+    playVideoAtIndex(_currentIndex);
+  }
+
+  void playPrevious() {
+    if (videoList.isEmpty) return;
+    // videoPlayerService.resetController();
+    _currentIndex = (_currentIndex - 1) % videoList.length;
+    if (_currentIndex < 0) _currentIndex = videoList.length - 1;
+    playVideoAtIndex(_currentIndex);
+  }
+
+  @override
+  void onInit() {
+    super.onInit();
+    ever(videoPlayerService.isCompleted, (bool completed) {
+      if (completed) {
+        playNext();
+      }
+    });
+  }
 
   @override
   void dispose() {

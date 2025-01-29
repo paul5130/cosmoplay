@@ -21,6 +21,7 @@ mixin _$VideoPlayerState {
     required TResult Function() idle,
     required TResult Function(String thumbnailUrl) initializing,
     required TResult Function() initialized,
+    required TResult Function() completed,
     required TResult Function(String? error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -29,6 +30,7 @@ mixin _$VideoPlayerState {
     TResult? Function()? idle,
     TResult? Function(String thumbnailUrl)? initializing,
     TResult? Function()? initialized,
+    TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -37,6 +39,7 @@ mixin _$VideoPlayerState {
     TResult Function()? idle,
     TResult Function(String thumbnailUrl)? initializing,
     TResult Function()? initialized,
+    TResult Function()? completed,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) =>
@@ -46,6 +49,7 @@ mixin _$VideoPlayerState {
     required TResult Function(VideoPlayerStateIdle value) idle,
     required TResult Function(VideoPlayerStateInitializing value) initializing,
     required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
     required TResult Function(VideoPlayerStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -54,6 +58,7 @@ mixin _$VideoPlayerState {
     TResult? Function(VideoPlayerStateIdle value)? idle,
     TResult? Function(VideoPlayerStateInitializing value)? initializing,
     TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
     TResult? Function(VideoPlayerStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +67,7 @@ mixin _$VideoPlayerState {
     TResult Function(VideoPlayerStateIdle value)? idle,
     TResult Function(VideoPlayerStateInitializing value)? initializing,
     TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
     TResult Function(VideoPlayerStateError value)? error,
     required TResult orElse(),
   }) =>
@@ -141,6 +147,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     required TResult Function() idle,
     required TResult Function(String thumbnailUrl) initializing,
     required TResult Function() initialized,
+    required TResult Function() completed,
     required TResult Function(String? error) error,
   }) {
     return idle();
@@ -152,6 +159,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     TResult? Function()? idle,
     TResult? Function(String thumbnailUrl)? initializing,
     TResult? Function()? initialized,
+    TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) {
     return idle?.call();
@@ -163,6 +171,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     TResult Function()? idle,
     TResult Function(String thumbnailUrl)? initializing,
     TResult Function()? initialized,
+    TResult Function()? completed,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -178,6 +187,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     required TResult Function(VideoPlayerStateIdle value) idle,
     required TResult Function(VideoPlayerStateInitializing value) initializing,
     required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
     required TResult Function(VideoPlayerStateError value) error,
   }) {
     return idle(this);
@@ -189,6 +199,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     TResult? Function(VideoPlayerStateIdle value)? idle,
     TResult? Function(VideoPlayerStateInitializing value)? initializing,
     TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
     TResult? Function(VideoPlayerStateError value)? error,
   }) {
     return idle?.call(this);
@@ -200,6 +211,7 @@ class _$VideoPlayerStateIdleImpl extends VideoPlayerStateIdle
     TResult Function(VideoPlayerStateIdle value)? idle,
     TResult Function(VideoPlayerStateInitializing value)? initializing,
     TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
     TResult Function(VideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
@@ -302,6 +314,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     required TResult Function() idle,
     required TResult Function(String thumbnailUrl) initializing,
     required TResult Function() initialized,
+    required TResult Function() completed,
     required TResult Function(String? error) error,
   }) {
     return initializing(thumbnailUrl);
@@ -313,6 +326,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     TResult? Function()? idle,
     TResult? Function(String thumbnailUrl)? initializing,
     TResult? Function()? initialized,
+    TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) {
     return initializing?.call(thumbnailUrl);
@@ -324,6 +338,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     TResult Function()? idle,
     TResult Function(String thumbnailUrl)? initializing,
     TResult Function()? initialized,
+    TResult Function()? completed,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -339,6 +354,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     required TResult Function(VideoPlayerStateIdle value) idle,
     required TResult Function(VideoPlayerStateInitializing value) initializing,
     required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
     required TResult Function(VideoPlayerStateError value) error,
   }) {
     return initializing(this);
@@ -350,6 +366,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     TResult? Function(VideoPlayerStateIdle value)? idle,
     TResult? Function(VideoPlayerStateInitializing value)? initializing,
     TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
     TResult? Function(VideoPlayerStateError value)? error,
   }) {
     return initializing?.call(this);
@@ -361,6 +378,7 @@ class _$VideoPlayerStateInitializingImpl extends VideoPlayerStateInitializing
     TResult Function(VideoPlayerStateIdle value)? idle,
     TResult Function(VideoPlayerStateInitializing value)? initializing,
     TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
     TResult Function(VideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
@@ -443,6 +461,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     required TResult Function() idle,
     required TResult Function(String thumbnailUrl) initializing,
     required TResult Function() initialized,
+    required TResult Function() completed,
     required TResult Function(String? error) error,
   }) {
     return initialized();
@@ -454,6 +473,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     TResult? Function()? idle,
     TResult? Function(String thumbnailUrl)? initializing,
     TResult? Function()? initialized,
+    TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) {
     return initialized?.call();
@@ -465,6 +485,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     TResult Function()? idle,
     TResult Function(String thumbnailUrl)? initializing,
     TResult Function()? initialized,
+    TResult Function()? completed,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -480,6 +501,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     required TResult Function(VideoPlayerStateIdle value) idle,
     required TResult Function(VideoPlayerStateInitializing value) initializing,
     required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
     required TResult Function(VideoPlayerStateError value) error,
   }) {
     return initialized(this);
@@ -491,6 +513,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     TResult? Function(VideoPlayerStateIdle value)? idle,
     TResult? Function(VideoPlayerStateInitializing value)? initializing,
     TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
     TResult? Function(VideoPlayerStateError value)? error,
   }) {
     return initialized?.call(this);
@@ -502,6 +525,7 @@ class _$VideoPlayerStateInitializedImpl extends VideoPlayerStateInitialized
     TResult Function(VideoPlayerStateIdle value)? idle,
     TResult Function(VideoPlayerStateInitializing value)? initializing,
     TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
     TResult Function(VideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {
@@ -516,6 +540,141 @@ abstract class VideoPlayerStateInitialized extends VideoPlayerState {
   const factory VideoPlayerStateInitialized() =
       _$VideoPlayerStateInitializedImpl;
   const VideoPlayerStateInitialized._() : super._();
+}
+
+/// @nodoc
+abstract class _$$VideoPlayerStateCompletedImplCopyWith<$Res> {
+  factory _$$VideoPlayerStateCompletedImplCopyWith(
+          _$VideoPlayerStateCompletedImpl value,
+          $Res Function(_$VideoPlayerStateCompletedImpl) then) =
+      __$$VideoPlayerStateCompletedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$VideoPlayerStateCompletedImplCopyWithImpl<$Res>
+    extends _$VideoPlayerStateCopyWithImpl<$Res,
+        _$VideoPlayerStateCompletedImpl>
+    implements _$$VideoPlayerStateCompletedImplCopyWith<$Res> {
+  __$$VideoPlayerStateCompletedImplCopyWithImpl(
+      _$VideoPlayerStateCompletedImpl _value,
+      $Res Function(_$VideoPlayerStateCompletedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of VideoPlayerState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$VideoPlayerStateCompletedImpl extends VideoPlayerStateCompleted
+    with DiagnosticableTreeMixin {
+  const _$VideoPlayerStateCompletedImpl() : super._();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'VideoPlayerState.completed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'VideoPlayerState.completed'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VideoPlayerStateCompletedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function(String thumbnailUrl) initializing,
+    required TResult Function() initialized,
+    required TResult Function() completed,
+    required TResult Function(String? error) error,
+  }) {
+    return completed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function(String thumbnailUrl)? initializing,
+    TResult? Function()? initialized,
+    TResult? Function()? completed,
+    TResult? Function(String? error)? error,
+  }) {
+    return completed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function(String thumbnailUrl)? initializing,
+    TResult Function()? initialized,
+    TResult Function()? completed,
+    TResult Function(String? error)? error,
+    required TResult orElse(),
+  }) {
+    if (completed != null) {
+      return completed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(VideoPlayerStateIdle value) idle,
+    required TResult Function(VideoPlayerStateInitializing value) initializing,
+    required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
+    required TResult Function(VideoPlayerStateError value) error,
+  }) {
+    return completed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(VideoPlayerStateIdle value)? idle,
+    TResult? Function(VideoPlayerStateInitializing value)? initializing,
+    TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
+    TResult? Function(VideoPlayerStateError value)? error,
+  }) {
+    return completed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(VideoPlayerStateIdle value)? idle,
+    TResult Function(VideoPlayerStateInitializing value)? initializing,
+    TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
+    TResult Function(VideoPlayerStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (completed != null) {
+      return completed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VideoPlayerStateCompleted extends VideoPlayerState {
+  const factory VideoPlayerStateCompleted() = _$VideoPlayerStateCompletedImpl;
+  const VideoPlayerStateCompleted._() : super._();
 }
 
 /// @nodoc
@@ -600,6 +759,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     required TResult Function() idle,
     required TResult Function(String thumbnailUrl) initializing,
     required TResult Function() initialized,
+    required TResult Function() completed,
     required TResult Function(String? error) error,
   }) {
     return error(this.error);
@@ -611,6 +771,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     TResult? Function()? idle,
     TResult? Function(String thumbnailUrl)? initializing,
     TResult? Function()? initialized,
+    TResult? Function()? completed,
     TResult? Function(String? error)? error,
   }) {
     return error?.call(this.error);
@@ -622,6 +783,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     TResult Function()? idle,
     TResult Function(String thumbnailUrl)? initializing,
     TResult Function()? initialized,
+    TResult Function()? completed,
     TResult Function(String? error)? error,
     required TResult orElse(),
   }) {
@@ -637,6 +799,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     required TResult Function(VideoPlayerStateIdle value) idle,
     required TResult Function(VideoPlayerStateInitializing value) initializing,
     required TResult Function(VideoPlayerStateInitialized value) initialized,
+    required TResult Function(VideoPlayerStateCompleted value) completed,
     required TResult Function(VideoPlayerStateError value) error,
   }) {
     return error(this);
@@ -648,6 +811,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     TResult? Function(VideoPlayerStateIdle value)? idle,
     TResult? Function(VideoPlayerStateInitializing value)? initializing,
     TResult? Function(VideoPlayerStateInitialized value)? initialized,
+    TResult? Function(VideoPlayerStateCompleted value)? completed,
     TResult? Function(VideoPlayerStateError value)? error,
   }) {
     return error?.call(this);
@@ -659,6 +823,7 @@ class _$VideoPlayerStateErrorImpl extends VideoPlayerStateError
     TResult Function(VideoPlayerStateIdle value)? idle,
     TResult Function(VideoPlayerStateInitializing value)? initializing,
     TResult Function(VideoPlayerStateInitialized value)? initialized,
+    TResult Function(VideoPlayerStateCompleted value)? completed,
     TResult Function(VideoPlayerStateError value)? error,
     required TResult orElse(),
   }) {

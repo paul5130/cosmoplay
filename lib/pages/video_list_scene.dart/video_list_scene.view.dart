@@ -9,6 +9,19 @@ class _VideoListSceneStateWidgetBuilder
         () => Scaffold(
           appBar: AppBar(
             title: Text('Search Videos'),
+            actions: [
+              TextButton(
+                onPressed: () => state._toVideoDetailScene(
+                  state._getVideoListController.allVideos,
+                ),
+                child: Text(
+                  'Random Play All',
+                  style: TextStyle(
+                    color: Colors.blueAccent,
+                  ),
+                ),
+              )
+            ],
           ),
           body: state._getVideoListController.state.when(
             initial: () => Center(
@@ -37,7 +50,9 @@ class _VideoListSceneStateWidgetBuilder
                 Expanded(
                   child: VideoList(
                     videoList: videos,
-                    onVideoDetailScene: state._toVideoDetailScene,
+                    onVideoDetailScene: (video) {
+                      state._toVideoDetailScene([video]);
+                    },
                   ),
                 )
               ],

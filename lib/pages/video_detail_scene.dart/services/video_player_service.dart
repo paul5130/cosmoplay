@@ -21,6 +21,8 @@ class VideoPlayerService extends GetxService {
   final RxBool _rxIsPlaying = RxBool(false);
   bool get isPlaying => _rxIsPlaying.value;
 
+  final RxBool isCompleted = RxBool(false);
+
   void initialize(String thumbnailUrl) {
     _rxVideoPlayerState.value = VideoPlayerState.initializing(
       thumbnailUrl: thumbnailUrl,
@@ -40,6 +42,7 @@ class VideoPlayerService extends GetxService {
   }
 
   Future<void> _initializeController(VideoPlayerController controller) async {
+    resetController();
     _controller = controller;
     try {
       await _controller!.initialize();
@@ -57,6 +60,7 @@ class VideoPlayerService extends GetxService {
     if (_controller == null) return;
     _rxPosition.value = _controller!.value.position;
     _rxIsPlaying.value = _controller!.value.isPlaying;
+    isCompleted.value = _controller!.value.isCompleted;
   }
 
   void play() {
@@ -75,6 +79,22 @@ class VideoPlayerService extends GetxService {
 
   void seekTo(Duration position) {
     _controller?.seekTo(position);
+  }
+
+  void stop() {
+    _controller?.pause();
+    _controller?.removeListener(_videoPlayerListener);
+    _controller?.dispose();
+    _controller = null;
+  }
+
+  void resetController() {
+    if (_controller != null) {
+      _controller!.pause();
+      _controller!.removeListener(_videoPlayerListener);
+      _controller!.dispose();
+      _controller = null;
+    }
   }
 
   @override

@@ -26,10 +26,10 @@ class _VideoListSceneState extends BaseSceneState<VideoListScene> {
     _getVideoListController.loadVideos();
   }
 
-  void _toVideoDetailScene(HeHeVideo video) => unawaited(
+  void _toVideoDetailScene(List<HeHeVideo> videos) => unawaited(
         Get.toNamed(
           AppRoutes.videoDetailScene,
-          arguments: video,
+          arguments: videos..shuffle(),
         ),
       );
 

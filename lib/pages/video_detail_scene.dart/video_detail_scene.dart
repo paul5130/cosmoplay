@@ -19,15 +19,17 @@ class VideoDetailScene extends StatefulWidget {
 
 class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene>
     with TickerProviderStateMixin, WidgetsBindingObserver {
-  final _heheVideo = Get.arguments as HeHeVideo;
+  final _heheVideos = Get.arguments as List<HeHeVideo>;
   final _videoPlayController = Get.find<HeHeVideoPlayerController>();
-  late Future<void> _initializeVideoPlayerFuture;
+
   @override
   void initState() {
     super.initState();
-    _initializeVideoPlayerFuture = _videoPlayController.setupVideo(
-      _heheVideo,
+    _videoPlayController.setVideoList(_heheVideos);
+    _videoPlayController.setupVideo(
+      _heheVideos.first,
     );
+
     WidgetsBinding.instance.addObserver(this);
   }
 
