@@ -16,33 +16,40 @@ class HeHeVideoPlayerController extends GetxController {
   RxBool isPlaying = false.obs;
 
   Future<void> setupVideo(
-      String thumbnailUrl, String videoId, String videoUrl) async {
+    String thumbnailUrl,
+    String videoId,
+    String videoUrl,
+  ) async {
     videoPlayerService.initialize(thumbnailUrl);
     final directory = (Platform.isAndroid)
         ? await getExternalStorageDirectory()
         : await getApplicationDocumentsDirectory();
     if (directory != null) {
       final filePath = '${directory.path}/$videoId.mp4';
-
-      if (File(filePath).existsSync()) {
+      final file = File(filePath);
+      if (file.existsSync()) {
         debugPrint('File exists: $filePath');
-        await videoPlayerService.initializeLocal(File(filePath));
-        play();
+        await videoPlayerService.initializeLocal(file);
       } else {
         debugPrint('File does not exist: $filePath');
-        _videoDownloadService.downloadFile(
-          url: videoUrl,
-          filename: '$videoId.mp4',
-          directory: BaseDirectory.applicationDocuments,
-          onProgress: (progress) =>
-              debugPrint('Download progress: ${progress * 100}%'),
-        );
+        _startDownload(videoUrl, videoId);
         await videoPlayerService.initializeNetwork(Uri.parse(videoUrl));
-        play();
       }
+      play();
     } else {
       throw Exception('Failed to get local path');
     }
+  }
+
+  void _startDownload(String videoUrl, String videoId) {
+    debugPrint('Starting download for $videoId.mp4');
+    _videoDownloadService.downloadFile(
+      url: videoUrl,
+      filename: '$videoId.mp4',
+      directory: BaseDirectory.applicationDocuments,
+      onProgress: (progress) =>
+          debugPrint('Download progress: ${progress * 100}%'),
+    );
   }
 
   void play() {
