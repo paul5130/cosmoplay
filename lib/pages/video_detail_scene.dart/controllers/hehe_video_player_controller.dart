@@ -9,8 +9,9 @@ import 'package:get/get.dart' hide Trans;
 import 'package:path_provider/path_provider.dart';
 
 class HeHeVideoPlayerController extends GetxController {
-  final VideoPlayerService videoPlayerService = VideoPlayerService();
-  final VideoDownloadService _videoDownloadService = VideoDownloadService();
+  final VideoPlayerService videoPlayerService = Get.find<VideoPlayerService>();
+  final VideoDownloadService _videoDownloadService =
+      Get.find<VideoDownloadService>();
 
   RxBool isPlaying = false.obs;
 
@@ -59,17 +60,13 @@ class HeHeVideoPlayerController extends GetxController {
     isPlaying.value = false;
   }
 
-  Future<void> cancelDownload(String videoUrl) async {
-    _videoDownloadService.cancelDownload(videoUrl);
+  void seekTo(Duration position) {
+    videoPlayerService.seekTo(position);
   }
 
   @override
   void dispose() {
     videoPlayerService.dispose();
     super.dispose();
-  }
-
-  void seekTo(Duration position) {
-    videoPlayerService.seekTo(position);
   }
 }

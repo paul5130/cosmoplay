@@ -1,5 +1,7 @@
 import 'package:cosmoplay/flavors.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_download_service.dart';
+import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
 
 import 'package:get/get.dart';
 
@@ -13,16 +15,24 @@ class InitialBinding extends Bindings {
   });
   @override
   void dependencies() {
-    Get.lazyPut<FlavorConfig>(
-      () => flavorConfig,
-      fenix: true,
+    Get.put<FlavorConfig>(
+      flavorConfig,
+      permanent: true,
+    );
+    Get.put<GetVideoListService>(
+      GetVideoListService(),
+      permanent: true,
     );
     Get.lazyPut<HeHeVideoPlayerController>(
       () => HeHeVideoPlayerController(),
       fenix: true,
     );
-    Get.lazyPut<GetVideoListService>(
-      () => GetVideoListService(),
+    Get.lazyPut<VideoPlayerService>(
+      () => VideoPlayerService(),
+      fenix: true,
+    );
+    Get.lazyPut<VideoDownloadService>(
+      () => VideoDownloadService(),
       fenix: true,
     );
   }

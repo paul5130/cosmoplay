@@ -5,7 +5,7 @@ import 'package:video_player/video_player.dart';
 
 import '../controllers/video_player_state.dart';
 
-class VideoPlayerService {
+class VideoPlayerService extends GetxService {
   VideoPlayerController? _controller;
 
   VideoPlayerController? get controller => _controller;
@@ -71,5 +71,13 @@ class VideoPlayerService {
 
   void seekTo(Duration position) {
     _controller?.seekTo(position);
+  }
+
+  @override
+  void onClose() {
+    _controller?.removeListener(_videoPlayerListener);
+    _controller?.dispose();
+    _controller = null;
+    super.onClose();
   }
 }
