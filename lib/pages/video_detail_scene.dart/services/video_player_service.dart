@@ -25,21 +25,19 @@ class VideoPlayerService {
   }
 
   Future<void> initializeNetwork(Uri url) async {
-    _controller = VideoPlayerController.networkUrl(url);
-    try {
-      await _controller!.initialize();
-      _controller!.addListener(_videoPlayerListener);
-      _rxDuration.value = _controller!.value.duration;
-      _rxVideoPlayerState.value = VideoPlayerState.initialized();
-    } catch (e) {
-      _rxVideoPlayerState.value = VideoPlayerState.error(
-        error: e.toString(),
-      );
-    }
+    await _initializeController(
+      VideoPlayerController.networkUrl(url),
+    );
   }
 
   Future<void> initializeLocal(File file) async {
-    _controller = VideoPlayerController.file(file);
+    await _initializeController(
+      VideoPlayerController.file(file),
+    );
+  }
+
+  Future<void> _initializeController(VideoPlayerController controller) async {
+    _controller = controller;
     try {
       await _controller!.initialize();
       _controller!.addListener(_videoPlayerListener);
@@ -66,6 +64,7 @@ class VideoPlayerService {
   }
 
   void dispose() {
+    _controller?.removeListener(_videoPlayerListener);
     _controller?.dispose();
     _controller = null;
   }
