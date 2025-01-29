@@ -18,6 +18,9 @@ class VideoPlayerService extends GetxService {
   final _rxDuration = Rx<Duration>(Duration.zero);
   Duration get duration => _rxDuration.value;
 
+  final RxBool _rxIsPlaying = RxBool(false);
+  bool get isPlaying => _rxIsPlaying.value;
+
   void initialize(String thumbnailUrl) {
     _rxVideoPlayerState.value = VideoPlayerState.initializing(
       thumbnailUrl: thumbnailUrl,
@@ -53,6 +56,7 @@ class VideoPlayerService extends GetxService {
   void _videoPlayerListener() {
     if (_controller == null) return;
     _rxPosition.value = _controller!.value.position;
+    _rxIsPlaying.value = _controller!.value.isPlaying;
   }
 
   void play() {

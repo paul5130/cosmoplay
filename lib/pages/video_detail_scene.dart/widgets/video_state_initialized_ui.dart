@@ -46,17 +46,19 @@ class VideoStateInitializedUI extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: AnimatedOpacity(
-              opacity: controller.isPlaying.value ? 0.2 : 1.0,
+              opacity: controller.videoPlayerService.isPlaying ? 0.2 : 1.0,
               duration: const Duration(milliseconds: 300),
               child: Obx(
                 () => IconButton(
                   iconSize: 64,
                   icon: Icon(
-                    controller.isPlaying.value ? Icons.pause : Icons.play_arrow,
+                    controller.videoPlayerService.isPlaying
+                        ? Icons.pause
+                        : Icons.play_arrow,
                     color: Colors.white,
                   ),
                   onPressed: () {
-                    if (controller.isPlaying.value) {
+                    if (controller.videoPlayerService.isPlaying) {
                       controller.pause();
                     } else {
                       controller.resume();

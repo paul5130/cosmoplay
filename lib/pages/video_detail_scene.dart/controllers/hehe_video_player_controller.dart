@@ -14,18 +14,6 @@ class HeHeVideoPlayerController extends GetxController {
   final VideoDownloadService _videoDownloadService =
       Get.find<VideoDownloadService>();
 
-  RxBool isPlaying = false.obs;
-
-  void setVideoQueue(List<HeHeVideo> videos) {
-    videoPlayerService.setVideoQueue(videos);
-  }
-
-  Future<void> playVideoAtIndex(int index) async {
-    if (videoPlayerService.videoQueue.isEmpty) return;
-    final video = videoPlayerService.videoQueue[index];
-    await setupVideo(video);
-  }
-
   Future<void> setupVideo(
     HeHeVideo heheVideo,
   ) async {
@@ -85,24 +73,13 @@ class HeHeVideoPlayerController extends GetxController {
     );
   }
 
-  void play() {
-    videoPlayerService.play();
-    isPlaying.value = true;
-  }
+  void play() => videoPlayerService.play();
 
-  void resume() {
-    videoPlayerService.play();
-    isPlaying.value = true;
-  }
+  void resume() => videoPlayerService.play();
 
-  void pause() {
-    videoPlayerService.pause();
-    isPlaying.value = false;
-  }
+  void pause() => videoPlayerService.pause();
 
-  void seekTo(Duration position) {
-    videoPlayerService.seekTo(position);
-  }
+  void seekTo(Duration position) => videoPlayerService.seekTo(position);
 
   @override
   void dispose() {
