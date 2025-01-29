@@ -26,9 +26,7 @@ class _VideoDetailSceneState extends BaseSceneState<VideoDetailScene>
   void initState() {
     super.initState();
     _initializeVideoPlayerFuture = _videoPlayController.setupVideo(
-      _heheVideo.imageUrl,
-      _heheVideo.id,
-      _heheVideo.videoUrl,
+      _heheVideo,
     );
     WidgetsBinding.instance.addObserver(this);
   }

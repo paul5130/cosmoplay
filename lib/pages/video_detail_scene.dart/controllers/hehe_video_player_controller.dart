@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:background_downloader/background_downloader.dart';
+import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_download_service.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
 import 'package:flutter/foundation.dart';
@@ -15,30 +16,62 @@ class HeHeVideoPlayerController extends GetxController {
 
   RxBool isPlaying = false.obs;
 
+  void setVideoQueue(List<HeHeVideo> videos) {
+    videoPlayerService.setVideoQueue(videos);
+  }
+
+  Future<void> playVideoAtIndex(int index) async {
+    if (videoPlayerService.videoQueue.isEmpty) return;
+    final video = videoPlayerService.videoQueue[index];
+    await setupVideo(video);
+  }
+
   Future<void> setupVideo(
-    String thumbnailUrl,
-    String videoId,
-    String videoUrl,
+    HeHeVideo heheVideo,
   ) async {
-    videoPlayerService.initialize(thumbnailUrl);
-    final directory = (Platform.isAndroid)
-        ? await getExternalStorageDirectory()
-        : await getApplicationDocumentsDirectory();
+    videoPlayerService.initialize(heheVideo.imageUrl);
+    Directory? directory = await _getdirectory();
     if (directory != null) {
-      final filePath = '${directory.path}/$videoId.mp4';
-      final file = File(filePath);
-      if (file.existsSync()) {
-        debugPrint('File exists: $filePath');
+      final isLocal = await _isVideoDownloaded(heheVideo.id, directory);
+      if (isLocal) {
+        final file = await _getLocalVideo(heheVideo.id, directory);
         await videoPlayerService.initializeLocal(file);
       } else {
-        debugPrint('File does not exist: $filePath');
-        _startDownload(videoUrl, videoId);
-        await videoPlayerService.initializeNetwork(Uri.parse(videoUrl));
+        _startDownload(heheVideo.videoUrl, heheVideo.id);
+        await videoPlayerService.initializeNetwork(
+          Uri.parse(
+            heheVideo.videoUrl,
+          ),
+        );
       }
       play();
     } else {
       throw Exception('Failed to get local path');
     }
+  }
+
+  Future<bool> _isVideoDownloaded(
+    String videoId,
+    Directory directory,
+  ) async {
+    final filePath = '${directory.path}/$videoId.mp4';
+    final file = File(filePath);
+    return file.exists();
+  }
+
+  Future<File> _getLocalVideo(
+    String videoId,
+    Directory directory,
+  ) async {
+    final filePath = '${directory.path}/$videoId.mp4';
+    return File(filePath);
+  }
+
+  Future<Directory?> _getdirectory() async {
+    final directory = (Platform.isAndroid)
+        ? await getExternalStorageDirectory()
+        : await getApplicationDocumentsDirectory();
+    return directory;
   }
 
   void _startDownload(String videoUrl, String videoId) {
