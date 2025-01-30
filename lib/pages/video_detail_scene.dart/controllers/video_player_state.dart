@@ -10,7 +10,6 @@ sealed class VideoPlayerState with _$VideoPlayerState {
     required String thumbnailUrl,
   }) = VideoPlayerStateInitializing;
   const factory VideoPlayerState.initialized() = VideoPlayerStateInitialized;
-  const factory VideoPlayerState.completed() = VideoPlayerStateCompleted;
   const factory VideoPlayerState.error({
     String? error,
   }) = VideoPlayerStateError;

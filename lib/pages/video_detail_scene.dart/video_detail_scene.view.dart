@@ -45,7 +45,6 @@ class _VideoDetailSceneStateWidgetBuilder
                 VideoStateInitializedUI(controller: state._videoPlayController),
               final VideoPlayerStateError stateError =>
                 VideoStateErrorUI(errorState: stateError),
-              final VideoPlayerStateCompleted _ => Container(),
             },
           ),
         ),
