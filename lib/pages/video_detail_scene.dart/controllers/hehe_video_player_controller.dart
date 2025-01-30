@@ -116,14 +116,12 @@ class HeHeVideoPlayerController extends GetxController {
 
   void playNext() {
     if (videoList.isEmpty) return;
-    // videoPlayerService.resetController();
     _currentIndex = (_currentIndex + 1) % videoList.length;
     playVideoAtIndex(_currentIndex);
   }
 
   void playPrevious() {
     if (videoList.isEmpty) return;
-    // videoPlayerService.resetController();
     _currentIndex = (_currentIndex - 1) % videoList.length;
     if (_currentIndex < 0) _currentIndex = videoList.length - 1;
     playVideoAtIndex(_currentIndex);

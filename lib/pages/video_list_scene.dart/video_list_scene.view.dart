@@ -30,11 +30,11 @@ class _VideoListSceneStateWidgetBuilder
             loading: () => Center(
               child: CircularProgressIndicator(),
             ),
-            success: (videos) => Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: TextField(
+            success: (videoList) => Padding(
+              padding: const EdgeInsets.all(8),
+              child: Column(
+                children: [
+                  TextField(
                     decoration: InputDecoration(
                       hintText: 'search videos...',
                       prefixIcon: Icon(
@@ -46,17 +46,45 @@ class _VideoListSceneStateWidgetBuilder
                     ),
                     onChanged: state._getVideoListController.filterVideos,
                   ),
-                ),
-                Expanded(
-                  child: VideoList(
-                    videoList: videos,
-                    onVideoDetailScene: (video) {
-                      state._toVideoDetailScene([video]);
-                    },
+                  const SizedBox(height: 8),
+                  Expanded(
+                    child: VideoGridView(
+                      videoList: videoList,
+                      onVideoDetailScene: (video) {
+                        state._toVideoDetailScene([video]);
+                      },
+                    ),
                   ),
-                )
-              ],
+                ],
+              ),
             ),
+            // success: (videos) => Column(
+            //   children: [
+            //     Padding(
+            //       padding: const EdgeInsets.all(8),
+            //       child: TextField(
+            //         decoration: InputDecoration(
+            //           hintText: 'search videos...',
+            //           prefixIcon: Icon(
+            //             Icons.search,
+            //           ),
+            //           border: OutlineInputBorder(
+            //             borderRadius: BorderRadius.circular(8),
+            //           ),
+            //         ),
+            //         onChanged: state._getVideoListController.filterVideos,
+            //       ),
+            //     ),
+            //     Expanded(
+            //       child: VideoList(
+            //         videoList: videos,
+            //         onVideoDetailScene: (video) {
+            //           state._toVideoDetailScene([video]);
+            //         },
+            //       ),
+            //     )
+            //   ],
+            // ),
             failure: (error) => Center(
               child: Text('Error: $error'),
             ),
