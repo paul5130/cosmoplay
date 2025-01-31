@@ -1,4 +1,5 @@
 import 'package:cosmoplay/flavors.dart';
+import 'package:cosmoplay/managers/video_manager.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_download_service.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
@@ -17,6 +18,10 @@ class InitialBinding extends Bindings {
   void dependencies() {
     Get.put<FlavorConfig>(
       flavorConfig,
+      permanent: true,
+    );
+    Get.put<VideoManager>(
+      VideoManager(),
       permanent: true,
     );
     Get.put<GetVideoListService>(
