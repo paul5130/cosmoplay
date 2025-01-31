@@ -4,11 +4,14 @@ import 'package:cosmoplay/managers/video_manager.dart';
 import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
 import 'package:flutter/foundation.dart';
+
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:get/get.dart' hide Trans;
 
-class HeHeVideoPlayerController extends GetxController {
+class HeHeVideoPlayerController extends GetxController
+    with WidgetsBindingObserver {
   final VideoPlayerService videoPlayerService = Get.find<VideoPlayerService>();
   final VideoManager videoManager = Get.find<VideoManager>();
 
@@ -100,6 +103,7 @@ class HeHeVideoPlayerController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+    WidgetsBinding.instance.addObserver(this);
     ever(videoPlayerService.isCompleted, (bool completed) {
       if (completed) {
         playNext();
@@ -110,6 +114,21 @@ class HeHeVideoPlayerController extends GetxController {
   @override
   void dispose() {
     videoPlayerService.dispose();
+    WidgetsBinding.instance.removeObserver(this);
     super.dispose();
+  }
+
+  @override
+  void didChangeMetrics() {
+    final Size size = PlatformDispatcher.instance.views.first.physicalSize;
+    final bool isLandscape = size.width > size.height;
+    debugPrint('trigger change metrics');
+    if (isLandscape && !isFullScreen) {
+      debugPrint('enterFullScreen in did change metrics');
+      enterFullScreen();
+    } else if (!isLandscape && isFullScreen) {
+      debugPrint('exitFullScreen in did change metrics');
+      exitFullScreen();
+    }
   }
 }
