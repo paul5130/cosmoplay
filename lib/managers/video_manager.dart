@@ -13,6 +13,8 @@ class VideoManager extends GetxService {
   static const String _videoListUrl =
       'https://drive.usercontent.google.com/download?id=1nzjKF2rVtfVmHU3Yqg43cylhP92NYVr1';
   final Dio _dio = Dio();
+  final VideoDownloadService _videoDownloadService =
+      Get.find<VideoDownloadService>();
 
   Future<String?> getVideoListJsonFromRemote() async {
     try {
@@ -54,11 +56,14 @@ class VideoManager extends GetxService {
 
   void startDownload(String videoUrl, String videoId) {
     debugPrint('Starting download video : $videoId.mp4');
-    final videoDownloadService = Get.find<VideoDownloadService>();
-    videoDownloadService.downloadFile(
+    _videoDownloadService.downloadFile(
       url: videoUrl,
       filename: '$videoId.mp4',
       directory: BaseDirectory.applicationDocuments,
+      onProgress: (progress) {
+        int percentage = (progress * 100).toInt();
+        debugPrint('Download progress: $percentage%');
+      },
     );
   }
 

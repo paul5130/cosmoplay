@@ -20,6 +20,10 @@ class InitialBinding extends Bindings {
       flavorConfig,
       permanent: true,
     );
+    Get.lazyPut<VideoDownloadService>(
+      () => VideoDownloadService(),
+      fenix: true,
+    );
     Get.put<VideoManager>(
       VideoManager(),
       permanent: true,
@@ -28,16 +32,13 @@ class InitialBinding extends Bindings {
       GetVideoListService(),
       permanent: true,
     );
+
     Get.lazyPut<HeHeVideoPlayerController>(
       () => HeHeVideoPlayerController(),
       fenix: true,
     );
     Get.lazyPut<VideoPlayerService>(
       () => VideoPlayerService(),
-      fenix: true,
-    );
-    Get.lazyPut<VideoDownloadService>(
-      () => VideoDownloadService(),
       fenix: true,
     );
   }
