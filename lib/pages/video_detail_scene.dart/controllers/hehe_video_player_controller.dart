@@ -26,21 +26,25 @@ class HeHeVideoPlayerController extends GetxController
 
   int _currentIndex = 0;
 
-  void enterFullScreen() {
+  void _enterFullScreen() {
     _rxIsFullScreen.value = true;
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
       DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
     ]);
   }
 
-  void exitFullScreen() {
+  void _exitFullScreen() {
     _rxIsFullScreen.value = false;
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
       DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
     ]);
   }
 
@@ -125,10 +129,10 @@ class HeHeVideoPlayerController extends GetxController
     debugPrint('trigger change metrics');
     if (isLandscape && !isFullScreen) {
       debugPrint('enterFullScreen in did change metrics');
-      enterFullScreen();
+      _enterFullScreen();
     } else if (!isLandscape && isFullScreen) {
       debugPrint('exitFullScreen in did change metrics');
-      exitFullScreen();
+      _exitFullScreen();
     }
   }
 }

@@ -104,22 +104,6 @@ class _VideoPlayerNormalUI extends StatelessWidget {
                     ),
                     iconSize: 48,
                   ),
-                  // IconButton(
-                  //   onPressed: () {
-                  //     if (controller.isFullScreen) {
-                  //       controller.exitFullScreen();
-                  //     } else {
-                  //       controller.enterFullScreen();
-                  //     }
-                  //   },
-                  //   icon: Icon(
-                  //     controller.isFullScreen
-                  //         ? Icons.fullscreen_exit
-                  //         : Icons.fullscreen_rounded,
-                  //     color: Colors.white,
-                  //   ),
-                  //   iconSize: 48,
-                  // ),
                   IconButton(
                     onPressed: controller.playNext,
                     icon: const Icon(
