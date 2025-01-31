@@ -4,6 +4,7 @@ import 'package:cosmoplay/managers/video_manager.dart';
 import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 
 import 'package:get/get.dart' hide Trans;
 
@@ -17,7 +18,28 @@ class HeHeVideoPlayerController extends GetxController {
   final RxString _rxTitle = RxString('');
   String get title => _rxTitle.value;
 
+  final RxBool _rxIsFullScreen = RxBool(false);
+  bool get isFullScreen => _rxIsFullScreen.value;
+
   int _currentIndex = 0;
+
+  void enterFullScreen() {
+    _rxIsFullScreen.value = true;
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.landscapeLeft,
+      DeviceOrientation.landscapeRight,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
+
+  void exitFullScreen() {
+    _rxIsFullScreen.value = false;
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+    ]);
+  }
 
   void setVideoList(List<HeHeVideo> videos) {
     _rxVideoList.assignAll(videos);

@@ -8,6 +8,25 @@ class VideoStateInitializedUI extends StatelessWidget {
   final HeHeVideoPlayerController controller;
   @override
   Widget build(BuildContext context) {
+    return Obx(
+      () => controller.isFullScreen
+          ? _VideoPlayerFullScreenUI(
+              controller: controller,
+            )
+          : _VideoPlayerNormalUI(
+              controller: controller,
+            ),
+    );
+  }
+}
+
+class _VideoPlayerNormalUI extends StatelessWidget {
+  const _VideoPlayerNormalUI({
+    required this.controller,
+  });
+  final HeHeVideoPlayerController controller;
+  @override
+  Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.center,
       child: Stack(
@@ -67,7 +86,130 @@ class VideoStateInitializedUI extends StatelessWidget {
                 ),
               ),
             ),
-          )
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                bottom: 20,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    onPressed: controller.playPrevious,
+                    icon: const Icon(
+                      Icons.skip_previous,
+                      color: Colors.white,
+                    ),
+                    iconSize: 48,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      if (controller.isFullScreen) {
+                        controller.exitFullScreen();
+                      } else {
+                        controller.enterFullScreen();
+                      }
+                    },
+                    icon: Icon(
+                      controller.isFullScreen
+                          ? Icons.fullscreen_exit
+                          : Icons.fullscreen_rounded,
+                      color: Colors.white,
+                    ),
+                    iconSize: 48,
+                  ),
+                  IconButton(
+                    onPressed: controller.playNext,
+                    icon: const Icon(
+                      Icons.skip_next,
+                      color: Colors.white,
+                    ),
+                    iconSize: 48,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _VideoPlayerFullScreenUI extends StatelessWidget {
+  const _VideoPlayerFullScreenUI({
+    required this.controller,
+  });
+  final HeHeVideoPlayerController controller;
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: AspectRatio(
+              aspectRatio:
+                  controller.videoPlayerService.controller!.value.aspectRatio,
+              child: VideoPlayer(controller.videoPlayerService.controller!),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Obx(
+              () => IconButton(
+                iconSize: 64,
+                icon: Icon(
+                  controller.videoPlayerService.isPlaying
+                      ? Icons.pause
+                      : Icons.play_arrow,
+                  color: Colors.white,
+                ),
+                onPressed: () {
+                  controller.videoPlayerService.isPlaying
+                      ? controller.pause()
+                      : controller.resume();
+                },
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  IconButton(
+                    iconSize: 48,
+                    icon: const Icon(Icons.skip_previous, color: Colors.white),
+                    onPressed: controller.playPrevious,
+                  ),
+                  IconButton(
+                    iconSize: 48,
+                    icon: Icon(
+                      controller.isFullScreen
+                          ? Icons.fullscreen_exit
+                          : Icons.fullscreen,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      controller.isFullScreen
+                          ? controller.exitFullScreen()
+                          : controller.enterFullScreen();
+                    },
+                  ),
+                  IconButton(
+                    iconSize: 48,
+                    icon: const Icon(Icons.skip_next, color: Colors.white),
+                    onPressed: controller.playNext,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );

@@ -5,38 +5,18 @@ class _VideoDetailSceneStateWidgetBuilder
   _VideoDetailSceneStateWidgetBuilder(super.state);
 
   @override
-  Widget sceneWidget(BuildContext context) => Scaffold(
-        appBar: AppBar(
-          title: Obx(
-            () => Text(
-              state._videoPlayController.title,
-            ),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                state._videoPlayController.playPrevious();
-                debugPrint('previous');
-              },
-              icon: Icon(
-                Icons.skip_previous,
-              ),
-            ),
-            IconButton(
-              onPressed: () {
-                state._videoPlayController.playNext();
-                debugPrint('next');
-              },
-              icon: Icon(
-                Icons.skip_next,
-              ),
-            ),
-          ],
-        ),
-        body: Container(
-          color: Colors.black,
-          child: Obx(
-            () => switch (state
+  Widget sceneWidget(BuildContext context) => Obx(
+        () => Scaffold(
+          appBar: state._videoPlayController.isFullScreen
+              ? null
+              : AppBar(
+                  title: Text(
+                    state._videoPlayController.title,
+                  ),
+                ),
+          body: Container(
+            color: Colors.black,
+            child: switch (state
                 ._videoPlayController.videoPlayerService.videoPlayerState) {
               final VideoPlayerStateIdle _ => Container(),
               final VideoPlayerStateInitializing stateIntializing =>
