@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:get/get.dart' hide Trans;
 import 'package:video_player/video_player.dart';
 
-import '../controllers/video_player_state.dart';
+import '../../pages/video_detail_scene.dart/controllers/video_player_state.dart';
 
 class VideoPlayerService extends GetxService {
   VideoPlayerController? _controller;

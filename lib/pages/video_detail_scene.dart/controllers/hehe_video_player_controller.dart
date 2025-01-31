@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:cosmoplay/managers/video_manager.dart';
+import 'package:cosmoplay/services/video_manager.dart';
 import 'package:cosmoplay/network/model/hehe_video.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
+import 'package:cosmoplay/services/video_player/video_player_service.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';

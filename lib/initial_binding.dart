@@ -1,8 +1,8 @@
 import 'package:cosmoplay/flavors.dart';
-import 'package:cosmoplay/managers/video_manager.dart';
+import 'package:cosmoplay/services/video_manager.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/controllers/hehe_video_player_controller.dart';
 import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_download_service.dart';
-import 'package:cosmoplay/pages/video_detail_scene.dart/services/video_player_service.dart';
+import 'package:cosmoplay/services/video_player/video_player_service.dart';
 
 import 'package:get/get.dart';
 

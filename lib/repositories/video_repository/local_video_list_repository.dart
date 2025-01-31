@@ -4,7 +4,7 @@ import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:cosmoplay/repositories/video_repository/video_list_repository.dart';
 import 'package:get/get.dart' hide Trans;
 
-import '../../managers/video_manager.dart';
+import '../../services/video_manager.dart';
 
 class LocalVideoListRepository extends VideoListRepository {
   final VideoManager _videoManager = Get.find<VideoManager>();
