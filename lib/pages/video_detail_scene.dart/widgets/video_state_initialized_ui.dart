@@ -45,7 +45,8 @@ class _VideoPlayerNormalUI extends StatelessWidget {
                 ),
                 Obx(
                   () => Slider(
-                    value: controller.videoPlayerService.position.inMilliseconds
+                    value: controller
+                        .videoPlayerService.rxPosition.value.inMilliseconds
                         .toDouble(),
                     max: controller.videoPlayerService.duration.inMilliseconds
                         .toDouble(),

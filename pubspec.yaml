@@ -5,6 +5,7 @@ environment:
   sdk: '^3.6.0'
 description: A new Flutter project.
 dependencies:
+  audio_service: ^0.18.16
   background_downloader: ^8.9.4
   cached_network_image: '^3.4.1'
   copy_with_extension: '^6.0.0'
@@ -20,6 +21,7 @@ dependencies:
   get: '^4.6.6'
   http: '^1.2.2'
   json_annotation: '^4.9.0'
+  just_audio: ^0.9.44
   path_provider: ^2.1.5
   pull_to_refresh: ^2.0.0
   video_player: '^2.9.2'

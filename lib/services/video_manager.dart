@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:background_downloader/background_downloader.dart';
+import 'package:cosmoplay/network/model/hehe_video.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart' hide Trans;
@@ -15,6 +16,11 @@ class VideoManager extends GetxService {
   final Dio _dio = Dio();
   final VideoDownloadService _videoDownloadService =
       Get.find<VideoDownloadService>();
+
+  Future<bool> isVideoDownloaded(String videoId) async {
+    final File? localFile = await getLocalVideo(videoId);
+    return localFile != null && localFile.existsSync();
+  }
 
   Future<String?> getVideoListJsonFromRemote() async {
     try {
@@ -54,15 +60,15 @@ class VideoManager extends GetxService {
     return await file.exists() ? file : null;
   }
 
-  void startDownload(String videoUrl, String videoId) {
-    debugPrint('Starting download video : $videoId.mp4');
+  void startDownload(HeHeVideo video) {
+    debugPrint('Starting download video : ${video.name}');
     _videoDownloadService.downloadFile(
-      url: videoUrl,
-      filename: '$videoId.mp4',
+      url: video.videoUrl,
+      filename: '${video.id}.mp4',
       directory: BaseDirectory.applicationDocuments,
       onProgress: (progress) {
         int percentage = (progress * 100).toInt();
-        debugPrint('Download progress: $percentage%');
+        debugPrint('Download ${video.name} progress: $percentage%');
       },
     );
   }

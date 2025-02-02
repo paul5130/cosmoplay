@@ -19,6 +19,7 @@
             "name": "cosmoplay (prod)",
             "request": "launch",
             "type": "dart",
+            "flutterMode": "release",
             "args": [
                 "--flavor",
                 "prod"

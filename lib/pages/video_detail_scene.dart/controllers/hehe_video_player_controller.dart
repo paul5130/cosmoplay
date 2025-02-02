@@ -55,7 +55,6 @@ class HeHeVideoPlayerController extends GetxController
 
   Future<void> playVideoAtIndex(int index) async {
     if (videoList.isEmpty || index >= videoList.length) return;
-    _currentIndex = index;
     final video = videoList[index];
     await setupVideo(video);
   }
@@ -63,7 +62,10 @@ class HeHeVideoPlayerController extends GetxController
   Future<void> setupVideo(
     HeHeVideo heheVideo,
   ) async {
-    videoPlayerService.resetController();
+    videoPlayerService.stop();
+
+    videoPlayerService.seekTo(Duration.zero);
+    videoPlayerService.rxPosition.value = Duration.zero;
     _rxTitle.value = heheVideo.name;
     videoPlayerService.initialize(heheVideo.imageUrl);
     File? localVideo = await videoManager.getLocalVideo(heheVideo.id);
@@ -73,9 +75,22 @@ class HeHeVideoPlayerController extends GetxController
     } else {
       debugPrint('Cannot find local video, start playing video from remote...');
       await videoPlayerService.initializeNetwork(Uri.parse(heheVideo.videoUrl));
-      videoManager.startDownload(heheVideo.videoUrl, heheVideo.id);
+      videoManager.startDownload(heheVideo);
     }
+
     play();
+    _checkIsNeedToPreDownload();
+    return;
+  }
+
+  void _checkIsNeedToPreDownload() async {
+    if (videoList.isEmpty || _currentIndex + 1 >= videoList.length) return;
+    final nextVideo = videoList[_currentIndex + 1];
+    File? nextLocalVideo = await videoManager.getLocalVideo(nextVideo.id);
+    if (nextLocalVideo == null) {
+      debugPrint('predownloading next video: ${nextVideo.name}');
+      videoManager.startDownload(nextVideo);
+    }
   }
 
   void play() => videoPlayerService.play();
@@ -108,7 +123,7 @@ class HeHeVideoPlayerController extends GetxController
   void onInit() {
     super.onInit();
     WidgetsBinding.instance.addObserver(this);
-    ever(videoPlayerService.isCompleted, (bool completed) {
+    ever(videoPlayerService.rxIsCompleted, (bool completed) {
       if (completed) {
         playNext();
       }
