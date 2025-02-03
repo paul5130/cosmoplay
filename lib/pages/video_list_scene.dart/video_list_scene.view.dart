@@ -12,7 +12,7 @@ class _VideoListSceneStateWidgetBuilder
             actions: [
               TextButton(
                 onPressed: () => state._toVideoDetailScene(
-                  state._getVideoListController.allVideos,
+                  state._getVideoListService.allVideos,
                 ),
                 child: Text(
                   'Random Play All',
@@ -25,7 +25,7 @@ class _VideoListSceneStateWidgetBuilder
           ),
           body: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
-            child: state._getVideoListController.state.when(
+            child: state._getVideoListService.state.when(
               initial: () => Center(
                 child: Text('No Videos loaded'),
               ),
@@ -46,7 +46,7 @@ class _VideoListSceneStateWidgetBuilder
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
-                      onChanged: state._getVideoListController.filterVideos,
+                      onChanged: state._getVideoListService.filterVideos,
                     ),
                     const SizedBox(height: 8),
                     Expanded(

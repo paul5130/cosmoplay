@@ -18,12 +18,12 @@ class VideoListScene extends StatefulWidget {
 }
 
 class _VideoListSceneState extends BaseSceneState<VideoListScene> {
-  final _getVideoListController = Get.find<GetVideoListService>();
+  final _getVideoListService = Get.find<GetVideoListService>();
 
   @override
   void initState() {
     super.initState();
-    _getVideoListController.loadVideos();
+    _getVideoListService.loadVideos();
   }
 
   void _toVideoDetailScene(List<HeHeVideo> videos) => unawaited(
