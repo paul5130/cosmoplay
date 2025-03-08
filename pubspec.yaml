@@ -1,72 +1,32 @@
-name: cosmoplay
-version: '1.0.0+1'
-publish_to: none
+name: thinktank_apply
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
 environment:
-  sdk: '^3.6.0'
-description: A new Flutter project.
+  sdk: ^3.6.1
+
 dependencies:
-  audio_service: ^0.18.16
-  background_downloader: ^8.9.4
-  cached_network_image: '^3.4.1'
-  copy_with_extension: '^6.0.0'
-  cupertino_icons: '^1.0.8'
-  dio: ^5.7.0
-  equatable: '^2.0.7'
+  file_picker: ^9.0.2
   flutter:
     sdk: flutter
-  flutter_common:
-    path: '../flutter_common'
-  flutter_native_splash: '^2.4.4'
-  freezed_annotation: '^2.4.4'
-  get: '^4.6.6'
-  http: '^1.2.2'
-  json_annotation: '^4.9.0'
-  just_audio: ^0.9.44
-  path_provider: ^2.1.5
-  pull_to_refresh: ^2.0.0
-  video_player: '^2.9.2'
+  flutter_form_builder: ^9.7.0
+  flutter_pdfview: ^1.4.0
+  flutter_riverpod: ^2.6.1
+  google_ml_kit: ^0.19.0
+  image_picker: ^1.1.2
+  pdf: ^3.11.3
+  printing: ^5.14.2
+
 dev_dependencies:
-  build_runner: '^2.4.14'
-  copy_with_extension_gen: '^6.0.0'
-  flutter_flavorizr: '^2.2.3'
-  flutter_launcher_icons: '^0.14.2'
-  flutter_lints: '^5.0.0'
   flutter_test:
     sdk: flutter
-  freezed: '^2.5.7'
-  json_serializable: '^6.6.1'
-  pubspec_dependency_sorter: '^1.0.5'
-flutter_gen:
-  output: 'lib/flutter_gen_assets'
-  fonts:
-    enabled: false
-  assets:
-    enabled: true
+  flutter_lints: ^5.0.0
+  build_runner: ^2.4.15
+  freezed: ^2.5.8
+  json_serializable: ^6.9.4
+  riverpod_generator: ^2.6.4
+  custom_lint: ^0.7.3
+
 flutter:
-  assets:
-    - assets/images/
   uses-material-design: true
-flavorizr:
-  flavors:
-    dev:
-      app:
-        name: '[dev] cosmoplay'
-      android:
-        applicationId: com.paulyswen.cosmoplay.dev
-        firebase:
-          config: .firebase/dev/google-services.json
-      ios:
-        bundleId: com.paulyswen.cosmoplay.dev
-        firebase:
-          config: .firebase/dev/GoogleService-Info.plist
-    prod:
-      app:
-        name: cosmoplay
-      android:
-        applicationId: com.paulyswen.cosmoplay
-        firebase:
-          config: .firebase/prod/google-services.json
-      ios:
-        bundleId: com.paulyswen.cosmoplay
-        firebase:
-          config: .firebase/prod/GoogleService-Info.plist
